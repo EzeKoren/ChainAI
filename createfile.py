@@ -20,8 +20,8 @@ def main():
 def reset(example, maxx, maxy):
     curx = 0
     cury = 0
-    while cury < maxy:
-        while curx < maxx:
+    while cury <= maxy:
+        while curx <= maxx:
             example["cordx"] = curx
             example["cordy"] = cury
             example["player"] = 0
@@ -29,16 +29,14 @@ def reset(example, maxx, maxy):
                 example["limx"] = 1
             else: 
                 if example["cordx"] == maxx:
-# TODO: Fix this
-                    example["limx"] = 3
+                    example["limx"] = -1
                 else:
                     example["limx"] = 2
             if example["cordy"] == 0:
                 example["limy"] = 1
             else: 
                 if example["cordy"] == maxy:
-# TODO: Fix this 2
-                    example["limy"] = 3
+                    example["limy"] = -1
                 else:
                     example["limy"] = 2
             toprint = json.dumps(example, indent=4)
