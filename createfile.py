@@ -15,7 +15,7 @@ example = {
 
 def main():
     reset(example, maxx, maxy)
-
+    termine()
 
 def reset(example, maxx, maxy):
     with open ('sample.json', 'w') as out:
@@ -53,13 +53,12 @@ def reset(example, maxx, maxy):
             curx += 1
         cury += 1
         curx = 0
-# TODO: Add end of JSON and format it
-# I want to fucking die btw
+# TODO: Format the JSON file
 
 def termine():
     print("termine")
     with open('sample.json', 'a') as out:
-        out.write("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
+        out.write("\n]\n}")
 
 
 
