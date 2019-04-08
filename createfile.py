@@ -1,6 +1,6 @@
 import json
-maxx = 6
-maxy = 10
+maxx = 5
+maxy = 9
 
 jsonfile = './sample.json'
 
@@ -18,6 +18,9 @@ def main():
 
 
 def reset(example, maxx, maxy):
+    with open ('sample.json', 'w') as out:
+        out.truncate
+        out.write("{\n\"boxes\":[\n")
     curx = 0
     cury = 0
     while cury <= maxy:
@@ -41,10 +44,22 @@ def reset(example, maxx, maxy):
                     example["limy"] = 2
             toprint = json.dumps(example, indent=4)
             print(toprint)
-# TODO: Send to sample.json 
+            with open ('sample.json', 'a') as out:
+                json.dump(example, out, indent=4)
+                if curx == maxx and cury == maxy:
+                    return
+                else:
+                    out.write(",\n")
             curx += 1
         cury += 1
         curx = 0
+# TODO: Add end of JSON and format it
+# I want to fucking die btw
+
+def termine():
+    print("termine")
+    with open('sample.json', 'a') as out:
+        out.write("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
 
 
 
