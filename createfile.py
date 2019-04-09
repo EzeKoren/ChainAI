@@ -1,3 +1,4 @@
+#I WANT TO DIE
 import json
 maxx = 5
 maxy = 9
