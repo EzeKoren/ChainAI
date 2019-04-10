@@ -1,5 +1,6 @@
-#I WANT TO DIE
 import json
+import os
+
 maxx = 5
 maxy = 9
 
@@ -17,6 +18,7 @@ example = {
 def main():
     reset(example, maxx, maxy)
     termine()
+    os.system("gamelogic.py")
 
 def reset(example, maxx, maxy):
     with open ('sample.json', 'w') as out:
