@@ -1,5 +1,4 @@
 import json
-import os
 
 maxx = 5
 maxy = 9
