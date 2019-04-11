@@ -7,6 +7,7 @@ maxy = 9
 jsonfile = './sample.json'
 
 example = {
+    "cord" : "00",
     "cordx" : 0,
     "cordy" : 0,
     "limx" : 1,
@@ -30,6 +31,7 @@ def reset(example, maxx, maxy):
         while curx <= maxx:
             example["cordx"] = curx
             example["cordy"] = cury
+            example["cord"] = str(curx) + str(cury)
             example["player"] = 0
             if example["cordx"] == 0:
                 example["limx"] = 1
@@ -56,7 +58,6 @@ def reset(example, maxx, maxy):
             curx += 1
         cury += 1
         curx = 0
-# TODO: Format the JSON file
 
 def termine():
     with open(jsonfile, 'a') as out:
