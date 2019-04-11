@@ -1,424 +1,424 @@
 {
-"boxes":[
-{
-    "cordx": 0,
-    "cordy": 0,
-    "limx": 1,
-    "limy": 1,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 0,
-    "limx": 2,
-    "limy": 1,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 0,
-    "limx": 2,
-    "limy": 1,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 0,
-    "limx": 2,
-    "limy": 1,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 0,
-    "limx": 2,
-    "limy": 1,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 0,
-    "limx": -1,
-    "limy": 1,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 1,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 1,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 1,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 1,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 1,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 1,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 2,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 2,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 2,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 2,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 2,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 2,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 3,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 3,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 3,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 3,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 3,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 3,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 4,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 4,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 4,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 4,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 4,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 4,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 5,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 5,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 5,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 5,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 5,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 5,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 6,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 6,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 6,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 6,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 6,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 6,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 7,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 7,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 7,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 7,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 7,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 7,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 8,
-    "limx": 1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 8,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 8,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 8,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 8,
-    "limx": 2,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 8,
-    "limx": -1,
-    "limy": 2,
-    "player": 0
-},
-{
-    "cordx": 0,
-    "cordy": 9,
-    "limx": 1,
-    "limy": -1,
-    "player": 0
-},
-{
-    "cordx": 1,
-    "cordy": 9,
-    "limx": 2,
-    "limy": -1,
-    "player": 0
-},
-{
-    "cordx": 2,
-    "cordy": 9,
-    "limx": 2,
-    "limy": -1,
-    "player": 0
-},
-{
-    "cordx": 3,
-    "cordy": 9,
-    "limx": 2,
-    "limy": -1,
-    "player": 0
-},
-{
-    "cordx": 4,
-    "cordy": 9,
-    "limx": 2,
-    "limy": -1,
-    "player": 0
-},
-{
-    "cordx": 5,
-    "cordy": 9,
-    "limx": -1,
-    "limy": -1,
-    "player": 0
-}
-]
+    "boxes": [
+        {
+            "cordx": 0,
+            "cordy": 0,
+            "limx": 1,
+            "limy": 1,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 0,
+            "limx": 2,
+            "limy": 1,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 0,
+            "limx": 2,
+            "limy": 1,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 0,
+            "limx": 2,
+            "limy": 1,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 0,
+            "limx": 2,
+            "limy": 1,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 0,
+            "limx": -1,
+            "limy": 1,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 1,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 1,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 1,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 1,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 1,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 1,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 2,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 2,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 2,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 2,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 2,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 2,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 3,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 3,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 3,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 3,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 3,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 3,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 4,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 4,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 4,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 4,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 4,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 4,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 5,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 5,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 5,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 5,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 5,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 5,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 6,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 6,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 6,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 6,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 6,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 6,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 7,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 7,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 7,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 7,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 7,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 7,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 8,
+            "limx": 1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 8,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 8,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 8,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 8,
+            "limx": 2,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 8,
+            "limx": -1,
+            "limy": 2,
+            "player": 0
+        },
+        {
+            "cordx": 0,
+            "cordy": 9,
+            "limx": 1,
+            "limy": -1,
+            "player": 0
+        },
+        {
+            "cordx": 1,
+            "cordy": 9,
+            "limx": 2,
+            "limy": -1,
+            "player": 0
+        },
+        {
+            "cordx": 2,
+            "cordy": 9,
+            "limx": 2,
+            "limy": -1,
+            "player": 0
+        },
+        {
+            "cordx": 3,
+            "cordy": 9,
+            "limx": 2,
+            "limy": -1,
+            "player": 0
+        },
+        {
+            "cordx": 4,
+            "cordy": 9,
+            "limx": 2,
+            "limy": -1,
+            "player": 0
+        },
+        {
+            "cordx": 5,
+            "cordy": 9,
+            "limx": -1,
+            "limy": -1,
+            "player": 0
+        }
+    ]
 }

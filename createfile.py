@@ -18,7 +18,7 @@ example = {
 def main():
     reset(example, maxx, maxy)
     termine()
-    os.system("gamelogic.py")
+    #os.system("gamelogic.py")
 
 def reset(example, maxx, maxy):
     with open ('sample.json', 'w') as out:
@@ -59,10 +59,13 @@ def reset(example, maxx, maxy):
 # TODO: Format the JSON file
 
 def termine():
-    print("termine")
-    with open('sample.json', 'a') as out:
+    with open(jsonfile, 'a') as out:
         out.write("\n]\n}")
-
+    with open(jsonfile, "r") as out:
+        datastore = json.load(out)
+    with open(jsonfile, "w") as out:
+        out.write(json.dumps(datastore, indent=4))
+    print("termine")
 
 
 if __name__ == "__main__":
