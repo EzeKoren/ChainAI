@@ -1,7 +1,7 @@
 {
     "boxes": [
         {
-            "cord": "00",
+            "cord": 0,
             "cordx": 0,
             "cordy": 0,
             "limx": 1,
@@ -9,7 +9,7 @@
             "player": 0
         },
         {
-            "cord": "10",
+            "cord": 10,
             "cordx": 1,
             "cordy": 0,
             "limx": 2,
@@ -17,7 +17,7 @@
             "player": 0
         },
         {
-            "cord": "20",
+            "cord": 20,
             "cordx": 2,
             "cordy": 0,
             "limx": 2,
@@ -25,7 +25,7 @@
             "player": 0
         },
         {
-            "cord": "30",
+            "cord": 30,
             "cordx": 3,
             "cordy": 0,
             "limx": 2,
@@ -33,7 +33,7 @@
             "player": 0
         },
         {
-            "cord": "40",
+            "cord": 40,
             "cordx": 4,
             "cordy": 0,
             "limx": 2,
@@ -41,7 +41,7 @@
             "player": 0
         },
         {
-            "cord": "50",
+            "cord": 50,
             "cordx": 5,
             "cordy": 0,
             "limx": -1,
@@ -49,7 +49,7 @@
             "player": 0
         },
         {
-            "cord": "01",
+            "cord": 1,
             "cordx": 0,
             "cordy": 1,
             "limx": 1,
@@ -57,7 +57,7 @@
             "player": 0
         },
         {
-            "cord": "11",
+            "cord": 11,
             "cordx": 1,
             "cordy": 1,
             "limx": 2,
@@ -65,7 +65,7 @@
             "player": 0
         },
         {
-            "cord": "21",
+            "cord": 21,
             "cordx": 2,
             "cordy": 1,
             "limx": 2,
@@ -73,7 +73,7 @@
             "player": 0
         },
         {
-            "cord": "31",
+            "cord": 31,
             "cordx": 3,
             "cordy": 1,
             "limx": 2,
@@ -81,7 +81,7 @@
             "player": 0
         },
         {
-            "cord": "41",
+            "cord": 41,
             "cordx": 4,
             "cordy": 1,
             "limx": 2,
@@ -89,7 +89,7 @@
             "player": 0
         },
         {
-            "cord": "51",
+            "cord": 51,
             "cordx": 5,
             "cordy": 1,
             "limx": -1,
@@ -97,7 +97,7 @@
             "player": 0
         },
         {
-            "cord": "02",
+            "cord": 2,
             "cordx": 0,
             "cordy": 2,
             "limx": 1,
@@ -105,7 +105,7 @@
             "player": 0
         },
         {
-            "cord": "12",
+            "cord": 12,
             "cordx": 1,
             "cordy": 2,
             "limx": 2,
@@ -113,7 +113,7 @@
             "player": 0
         },
         {
-            "cord": "22",
+            "cord": 22,
             "cordx": 2,
             "cordy": 2,
             "limx": 2,
@@ -121,7 +121,7 @@
             "player": 0
         },
         {
-            "cord": "32",
+            "cord": 32,
             "cordx": 3,
             "cordy": 2,
             "limx": 2,
@@ -129,7 +129,7 @@
             "player": 0
         },
         {
-            "cord": "42",
+            "cord": 42,
             "cordx": 4,
             "cordy": 2,
             "limx": 2,
@@ -137,7 +137,7 @@
             "player": 0
         },
         {
-            "cord": "52",
+            "cord": 52,
             "cordx": 5,
             "cordy": 2,
             "limx": -1,
@@ -145,7 +145,7 @@
             "player": 0
         },
         {
-            "cord": "03",
+            "cord": 3,
             "cordx": 0,
             "cordy": 3,
             "limx": 1,
@@ -153,7 +153,7 @@
             "player": 0
         },
         {
-            "cord": "13",
+            "cord": 13,
             "cordx": 1,
             "cordy": 3,
             "limx": 2,
@@ -161,7 +161,7 @@
             "player": 0
         },
         {
-            "cord": "23",
+            "cord": 23,
             "cordx": 2,
             "cordy": 3,
             "limx": 2,
@@ -169,7 +169,7 @@
             "player": 0
         },
         {
-            "cord": "33",
+            "cord": 33,
             "cordx": 3,
             "cordy": 3,
             "limx": 2,
@@ -177,7 +177,7 @@
             "player": 0
         },
         {
-            "cord": "43",
+            "cord": 43,
             "cordx": 4,
             "cordy": 3,
             "limx": 2,
@@ -185,7 +185,7 @@
             "player": 0
         },
         {
-            "cord": "53",
+            "cord": 53,
             "cordx": 5,
             "cordy": 3,
             "limx": -1,
@@ -193,7 +193,7 @@
             "player": 0
         },
         {
-            "cord": "04",
+            "cord": 4,
             "cordx": 0,
             "cordy": 4,
             "limx": 1,
@@ -201,7 +201,7 @@
             "player": 0
         },
         {
-            "cord": "14",
+            "cord": 14,
             "cordx": 1,
             "cordy": 4,
             "limx": 2,
@@ -209,7 +209,7 @@
             "player": 0
         },
         {
-            "cord": "24",
+            "cord": 24,
             "cordx": 2,
             "cordy": 4,
             "limx": 2,
@@ -217,7 +217,7 @@
             "player": 0
         },
         {
-            "cord": "34",
+            "cord": 34,
             "cordx": 3,
             "cordy": 4,
             "limx": 2,
@@ -225,7 +225,7 @@
             "player": 0
         },
         {
-            "cord": "44",
+            "cord": 44,
             "cordx": 4,
             "cordy": 4,
             "limx": 2,
@@ -233,7 +233,7 @@
             "player": 0
         },
         {
-            "cord": "54",
+            "cord": 54,
             "cordx": 5,
             "cordy": 4,
             "limx": -1,
@@ -241,7 +241,7 @@
             "player": 0
         },
         {
-            "cord": "05",
+            "cord": 5,
             "cordx": 0,
             "cordy": 5,
             "limx": 1,
@@ -249,7 +249,7 @@
             "player": 0
         },
         {
-            "cord": "15",
+            "cord": 15,
             "cordx": 1,
             "cordy": 5,
             "limx": 2,
@@ -257,7 +257,7 @@
             "player": 0
         },
         {
-            "cord": "25",
+            "cord": 25,
             "cordx": 2,
             "cordy": 5,
             "limx": 2,
@@ -265,7 +265,7 @@
             "player": 0
         },
         {
-            "cord": "35",
+            "cord": 35,
             "cordx": 3,
             "cordy": 5,
             "limx": 2,
@@ -273,7 +273,7 @@
             "player": 0
         },
         {
-            "cord": "45",
+            "cord": 45,
             "cordx": 4,
             "cordy": 5,
             "limx": 2,
@@ -281,7 +281,7 @@
             "player": 0
         },
         {
-            "cord": "55",
+            "cord": 55,
             "cordx": 5,
             "cordy": 5,
             "limx": -1,
@@ -289,7 +289,7 @@
             "player": 0
         },
         {
-            "cord": "06",
+            "cord": 6,
             "cordx": 0,
             "cordy": 6,
             "limx": 1,
@@ -297,7 +297,7 @@
             "player": 0
         },
         {
-            "cord": "16",
+            "cord": 16,
             "cordx": 1,
             "cordy": 6,
             "limx": 2,
@@ -305,7 +305,7 @@
             "player": 0
         },
         {
-            "cord": "26",
+            "cord": 26,
             "cordx": 2,
             "cordy": 6,
             "limx": 2,
@@ -313,7 +313,7 @@
             "player": 0
         },
         {
-            "cord": "36",
+            "cord": 36,
             "cordx": 3,
             "cordy": 6,
             "limx": 2,
@@ -321,7 +321,7 @@
             "player": 0
         },
         {
-            "cord": "46",
+            "cord": 46,
             "cordx": 4,
             "cordy": 6,
             "limx": 2,
@@ -329,7 +329,7 @@
             "player": 0
         },
         {
-            "cord": "56",
+            "cord": 56,
             "cordx": 5,
             "cordy": 6,
             "limx": -1,
@@ -337,7 +337,7 @@
             "player": 0
         },
         {
-            "cord": "07",
+            "cord": 7,
             "cordx": 0,
             "cordy": 7,
             "limx": 1,
@@ -345,7 +345,7 @@
             "player": 0
         },
         {
-            "cord": "17",
+            "cord": 17,
             "cordx": 1,
             "cordy": 7,
             "limx": 2,
@@ -353,7 +353,7 @@
             "player": 0
         },
         {
-            "cord": "27",
+            "cord": 27,
             "cordx": 2,
             "cordy": 7,
             "limx": 2,
@@ -361,7 +361,7 @@
             "player": 0
         },
         {
-            "cord": "37",
+            "cord": 37,
             "cordx": 3,
             "cordy": 7,
             "limx": 2,
@@ -369,7 +369,7 @@
             "player": 0
         },
         {
-            "cord": "47",
+            "cord": 47,
             "cordx": 4,
             "cordy": 7,
             "limx": 2,
@@ -377,7 +377,7 @@
             "player": 0
         },
         {
-            "cord": "57",
+            "cord": 57,
             "cordx": 5,
             "cordy": 7,
             "limx": -1,
@@ -385,7 +385,7 @@
             "player": 0
         },
         {
-            "cord": "08",
+            "cord": 8,
             "cordx": 0,
             "cordy": 8,
             "limx": 1,
@@ -393,7 +393,7 @@
             "player": 0
         },
         {
-            "cord": "18",
+            "cord": 18,
             "cordx": 1,
             "cordy": 8,
             "limx": 2,
@@ -401,7 +401,7 @@
             "player": 0
         },
         {
-            "cord": "28",
+            "cord": 28,
             "cordx": 2,
             "cordy": 8,
             "limx": 2,
@@ -409,7 +409,7 @@
             "player": 0
         },
         {
-            "cord": "38",
+            "cord": 38,
             "cordx": 3,
             "cordy": 8,
             "limx": 2,
@@ -417,7 +417,7 @@
             "player": 0
         },
         {
-            "cord": "48",
+            "cord": 48,
             "cordx": 4,
             "cordy": 8,
             "limx": 2,
@@ -425,7 +425,7 @@
             "player": 0
         },
         {
-            "cord": "58",
+            "cord": 58,
             "cordx": 5,
             "cordy": 8,
             "limx": -1,
@@ -433,7 +433,7 @@
             "player": 0
         },
         {
-            "cord": "09",
+            "cord": 9,
             "cordx": 0,
             "cordy": 9,
             "limx": 1,
@@ -441,7 +441,7 @@
             "player": 0
         },
         {
-            "cord": "19",
+            "cord": 19,
             "cordx": 1,
             "cordy": 9,
             "limx": 2,
@@ -449,7 +449,7 @@
             "player": 0
         },
         {
-            "cord": "29",
+            "cord": 29,
             "cordx": 2,
             "cordy": 9,
             "limx": 2,
@@ -457,7 +457,7 @@
             "player": 0
         },
         {
-            "cord": "39",
+            "cord": 39,
             "cordx": 3,
             "cordy": 9,
             "limx": 2,
@@ -465,7 +465,7 @@
             "player": 0
         },
         {
-            "cord": "49",
+            "cord": 49,
             "cordx": 4,
             "cordy": 9,
             "limx": 2,
@@ -473,7 +473,7 @@
             "player": 0
         },
         {
-            "cord": "59",
+            "cord": 59,
             "cordx": 5,
             "cordy": 9,
             "limx": -1,
