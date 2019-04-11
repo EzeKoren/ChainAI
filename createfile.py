@@ -3,7 +3,7 @@ import json
 maxx = 5
 maxy = 9
 
-jsonfile = './sample.json'
+jsonfile = "./tablero.json"
 
 example = {
     "cord" : "00",
@@ -18,10 +18,9 @@ example = {
 def main():
     reset(example, maxx, maxy)
     termine()
-    #os.system("gamelogic.py")
 
 def reset(example, maxx, maxy):
-    with open ('sample.json', 'w') as out:
+    with open (jsonfile, "w") as out:
         out.truncate
         out.write("{\n\"boxes\":[\n")
     curx = 0
@@ -48,7 +47,7 @@ def reset(example, maxx, maxy):
                     example["limy"] = 2
             toprint = json.dumps(example, indent=4)
             print(toprint)
-            with open ('sample.json', 'a') as out:
+            with open (jsonfile, "a") as out:
                 json.dump(example, out, indent=4)
                 if curx == maxx and cury == maxy:
                     return
@@ -59,7 +58,7 @@ def reset(example, maxx, maxy):
         curx = 0
 
 def termine():
-    with open(jsonfile, 'a') as out:
+    with open(jsonfile, "a") as out:
         out.write("\n]\n}")
     with open(jsonfile, "r") as out:
         datastore = json.load(out)
