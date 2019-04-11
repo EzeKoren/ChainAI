@@ -2,18 +2,37 @@ import json
 import sys
 
 jsonfile = "./tablero.json"
-boxtocheck = str(sys.argv[1]) + str(sys.argv[2])
+params = str(sys.argv[1]) + str(sys.argv[2])
+player = str(sys.argv[3])
 
-def main():
+def findsquare(boxtocheck):
     print("boxtocheck " + boxtocheck)
     with open(jsonfile, "r") as jayson:
         data = json.load(jayson)
-        print(data)
         for v in data["boxes"]:
             print(v["cord"])
             if v["cord"] == boxtocheck:
-                xd
-            
+                relsquare = v
+                addpoint(relsquare)
+                return
+
+def addpoint(square):
+    square["player"] = player
+    square["points"] += 1
+    if square["points"] == square["max"]:
+        square["points"] = 0
+        if square["cordx"] == 2:
+            findsquare(str(square["cordx"] + 1) + str(square["cordy"]))
+            findsquare(str(square["cordx"] - 1) + str(square["cordy"]))
+        else: 
+            findsquare(str(square["cordx"] + square["limx"]) + str(square["cordy"]))
+        if square["cordy"] == 2:
+            findsquare(str(square["cordx"]) + str(square["cordy"] + 1))
+            findsquare(str(square["cordx"]) + str(square["cordy"] - 1))
+        else: 
+            findsquare(str(square["cordx"]) + str(square["cordy"] + square["limy"]))
+#TODO: Rewrite JSON object
+
 
 if __name__ == "__main__":
-    main()
+    findsquare(params)
