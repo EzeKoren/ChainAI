@@ -29,7 +29,7 @@ def reset(example, maxx, maxy):
         while curx <= maxx:
             example["cordx"] = curx
             example["cordy"] = cury
-            example["cord"] = int(str(curx) + str(cury))
+            example["cord"] = str(curx) + str(cury)
             example["player"] = 0
             if example["cordx"] == 0:
                 example["limx"] = 1
