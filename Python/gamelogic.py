@@ -1,7 +1,7 @@
 import json
 import sys
 
-jsonfile = "./tablero.json"
+jsonfile = "../tablero.json"
 params = str(sys.argv[1]) + str(sys.argv[2])
 player = str(sys.argv[3])
 

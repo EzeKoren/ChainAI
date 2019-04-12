@@ -3,7 +3,7 @@ import json
 maxx = 5
 maxy = 9
 
-jsonfile = "./tablero.json"
+jsonfile = "../tablero.json"
 
 example = {
     "cord" : "00",
