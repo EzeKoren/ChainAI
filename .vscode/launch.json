@@ -12,6 +12,14 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Python: Current File (PARAM 2 3 1)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["2", "3", "1"]
+        },
+        {
             "name": "Python: Remote Attach",
             "type": "python",
             "request": "attach",
