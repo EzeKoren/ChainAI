@@ -21,10 +21,12 @@ def findsquare(boxtocheck):
                 square["player"] = player
                 ## ADDS A POINT TO THE SQUARE
                 square["points"] += 1
+                square["tilexp" ] -= 1
                 ## CHECKS IF POINTS LIMIT IS REACHED
                 if square["points"] == square["max"]:
                     ## RESET THE SQUARE'S POINTS
                     square["points"] = 0
+                    square["tilexp"] = 4
                     ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
                     with open(jsonfile, "w") as ndeah:
                         json.dump(data, ndeah, indent=4)
