@@ -10,7 +10,6 @@ example = {
     "cordx" : 0,
     "cordy" : 0,
     "points" : 0,
-    "tilexp" : 4,
     "max" : 0,
     "limx" : 1,
     "limy" : 1,
