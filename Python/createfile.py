@@ -13,7 +13,7 @@ example = {
     "max" : 0,
     "limx" : 1,
     "limy" : 1,
-    "player" : 0 
+    "player" : "0" 
 }
 
 
@@ -55,6 +55,7 @@ def reset(example, maxx, maxy):
                 else:
                     example["limy"] = 2
                     example["max"] += 2
+                example["tilexp"] = example["max"]
             toprint = json.dumps(example, indent=4)
             print(toprint)
             with open (jsonfile, "a") as out:
