@@ -1,9 +1,10 @@
 import json
+import sys
 
 maxx = 5
 maxy = 9
 
-jsonfile = "../tablero.json"
+jsonfile = "../Tableros/" + str(sys.argv[1])
 
 example = {
     "cord" : "00",
