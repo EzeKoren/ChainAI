@@ -5,8 +5,8 @@ import numpy as np
 from keras.models       import Sequential
 from keras.layers       import Dense
 from keras.optimizers   import Adam
-from createfile  import main as createfile
-from gamelogic   import findsquare as findsquare
+from createfile         import main as createfile
+from gamelogic          import findsquare as findsquare
 
 def findtablero(num):
     found = False
@@ -15,6 +15,8 @@ def findtablero(num):
         if os.path.isfile(tablero) == False:
                 print (tablero)
                 found = True
+                open(tablero, "a+")
+                createfile(tablero)
         else: num += 1
         return tablero
 
