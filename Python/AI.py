@@ -2,14 +2,23 @@ import json
 import os
 import random
 import numpy as np
-from keras.models     import Sequential
-from keras.layers     import Dense
-from keras.optimizers import Adam
+from keras.models       import Sequential
+from keras.layers       import Dense
+from keras.optimizers   import Adam
+from createfile  import main as createfile
+from gamelogic   import findsquare as findsquare
 
-tablename = 1
+def findtablero(num):
+    found = False
+    while found == False:
+        tablero = os.path.abspath(os.path.dirname(__file__)) + "/Tableros/" + str(num) + ".json"
+        if os.path.isfile(tablero) == False:
+                print (tablero)
+                found = True
+        else: num += 1
+        return tablero
 
-def placecrap(px, py, pl, file):
-    os.system("gamelogic.py " + px + " " + py + " " + pl + " " + file)
+tablero = findtablero(1)
 
 def build_model(input_size, output_size):
     model = Sequential()
@@ -25,19 +34,3 @@ def train_model(training_data):
     model = build_model(input_size=len(X[0]), output_size=len(y[0]))
     model.fit(X, y, epochs=10)
     return model
-
-
-
-def main():
-    
-
-# def stats():
-#     with open (jsonfile, "r") as dou:
-#         board = json.load(dou)
-#         fitness = 0
-#         for square in board["boxes"]:
-#             if square["player"] == "ai":
-#                 v = square[""]
-
-if __name__ == "__main__":
-    main()

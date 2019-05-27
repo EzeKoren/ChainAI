@@ -4,8 +4,6 @@ import sys
 maxx = 5
 maxy = 9
 
-jsonfile = "../Tableros/" + str(sys.argv[1])
-
 example = {
     "cord" : "00",
     "cordx" : 0,
@@ -18,11 +16,11 @@ example = {
 }
 
 
-def main():
-    reset(example, maxx, maxy)
-    termine()
+def main(jsonfile):
+    reset(example, maxx, maxy, jsonfile)
+    termine(jsonfile)
 
-def reset(example, maxx, maxy):
+def reset(example, maxx, maxy, jsonfile):
     with open (jsonfile, "w") as out:
         out.truncate
         out.write("{\n\"boxes\":[\n")
@@ -69,7 +67,7 @@ def reset(example, maxx, maxy):
         cury += 1
         curx = 0
 
-def termine():
+def termine(jsonfile):
     with open(jsonfile, "a") as out:
         out.write("\n]\n}")
     with open(jsonfile, "r") as out:
@@ -77,7 +75,3 @@ def termine():
     with open(jsonfile, "w") as out:
         out.write(json.dumps(datastore, indent=4))
     print("termine")
-
-
-if __name__ == "__main__":
-    main()
