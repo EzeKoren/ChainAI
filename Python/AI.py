@@ -11,7 +11,8 @@ from gamelogic          import findsquare as findsquare
 def findtablero(num):
     found = False
     while found == False:
-        tablero = os.path.abspath(os.path.dirname(__file__)) + "/Tableros/" + str(num) + ".json"
+        folder = os.path.abspath("../Tableros/")
+        tablero = folder + "/" + str(num) + ".json"
         if os.path.isfile(tablero) == False:
                 print(tablero)
                 found = True
