@@ -5,25 +5,12 @@ import numpy as np
 from keras.models       import Sequential
 from keras.layers       import Dense
 from keras.optimizers   import Adam
-from createfile         import main as createfile
 from gamelogic          import findsquare as findsquare
+from testfile import main as createfile
 
-def findtablero(num):
-    while False == False:
-        folder = os.getcwd()
-        print(folder)
-        tablero = os.path.join(folder, "Tableros", str(num) + ".json")
-        print(os.path.isfile(tablero))
-        if os.path.isfile(tablero) == True:
-            num += 1
-        elif os.path.isfile(tablero) == False: 
-            print(tablero)
-                open(tablero, "w+")
-                createfile(tablero)
-                return tablero
-                break
 
-tablero = findtablero(1)
+
+tablero = createfile()
 goal_steps = 10
 intial_games = 10000
 player = 1
