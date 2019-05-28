@@ -9,17 +9,19 @@ from createfile         import main as createfile
 from gamelogic          import findsquare as findsquare
 
 def findtablero(num):
-    found = False
-    while found == False:
-        folder = os.path.abspath("../Tableros/")
-        tablero = folder + "/" + str(num) + ".json"
-        if os.path.isfile(tablero) == False:
-                print(tablero)
-                found = True
-                open(tablero, "a+")
+    while False == False:
+        folder = os.getcwd()
+        print(folder)
+        tablero = os.path.join(folder, "Tableros", str(num) + ".json")
+        print(os.path.isfile(tablero))
+        if os.path.isfile(tablero) == True:
+            num += 1
+        elif os.path.isfile(tablero) == False: 
+            print(tablero)
+                open(tablero, "w+")
                 createfile(tablero)
-        else: num += 1
-        return tablero
+                return tablero
+                break
 
 tablero = findtablero(1)
 goal_steps = 10
