@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     fun Reset(): Boolean {
         pathfold.mkdirs()
         tablero.createNewFile()
-        tablero.writeText("Hello world!")
+        tablero.writeText("")
         Toast.makeText(this, tablero.toString(), Toast.LENGTH_LONG).show()
         return true
     }
