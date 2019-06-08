@@ -62,7 +62,7 @@ def reset(example, maxx, maxy, jsonfile):
                 if curx == maxx and cury == maxy:
                     return
                 else:
-                    out.write(",\n")
+                    out.write(",\n")    
             curx += 1
         cury += 1
         curx = 0
