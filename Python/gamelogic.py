@@ -19,6 +19,7 @@ def findsquare(boxtocheck, jsonfile, player):
         for square in data["boxes"]:
             if square["cord"] == boxtocheck:
                 ## MARKS POSITION AS TAKEN BY PLAYER
+                time.sleep(.5)
                 square["player"] = player
                 ## ADDS A POINT TO THE SQUARE
                 square["points"] += 1

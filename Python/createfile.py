@@ -12,7 +12,7 @@ example = {
     "max" : 0,
     "limx" : 1,
     "limy" : 1,
-    "player" : "0" 
+    "player" : 0 
 }
 
 
