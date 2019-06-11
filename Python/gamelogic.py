@@ -28,6 +28,7 @@ def findsquare(boxtocheck, jsonfile, player):
                 if square["points"] == square["max"]:
                     ## RESET THE SQUARE'S POINTS
                     square["points"] = 0
+                    square["player"] = 0
                     ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
                     with open(jsonfile, "w") as ndeah:
                         json.dump(data, ndeah, indent=4)

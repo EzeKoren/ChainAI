@@ -1,17 +1,18 @@
-window.onload = function() {
-    var main = new Vue({
-        el: '#main',
-        data: {
-            currentActivity: 'home'
-        }
+var tablero;
+$(window).on("load", function() {
+    $(document).ready(function() {
+        console.log("ready!");
+        M.AutoInit();
+        $('#c00').click(function() {
+            M.toast({ html: 'Hello, world' })
+            $.ajax({
+                type: "POST",
+                url: "../Python/testfile.py",
+                data: { param: "text" }
+            }).done(function(o) {
+                M.toast({ html: 'done' })
+            });
+            // MAS CODIGO ACA
+        });
     });
-}
-
-Vue.component('button-ndea', {
-    //props: ['bolitas', 'cord'],
-    template: '<div class="col s2"><a class="waves-effect waves-light btn></a></div>'
-})
-
-Vue.component('game-grid', {
-    template: '<div class="row"><button-ndea></button-ndea></div>'
-})
+});

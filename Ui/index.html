@@ -5,127 +5,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     <script src="script.js"></script>
     <title>ChainAI</title>
+
 </head>
 
 <body>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">ChainAI</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-            </ul>
-        </div>
-    </nav>
-
-    <!-- 
-    <div class="container">
-        <div class="row">
-            <div class="col s2">
-                <a class="waves-effect waves-light btn red">12</a>
+    <body bgcolor="#263238">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center"><b><i>ChainAI</i></b></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                </ul>
             </div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn"id="9">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn">12</a></div>
-        </div>
-        <div class="row">
-            <div class="col s2"><a class="waves-effect waves-light btn" id="9">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn" id="9">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn" id="9">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn" id="9">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn" id="9">12</a></div>
-            <div class="col s2"><a class="waves-effect waves-light btn" id="9">12</a></div>
-        </div>
-    </div> -->
-    <div class="container">
-        <div id="main">
-            <!--<button-ndea colorin=red bolitas="3"></button-ndea>-->
-            <game-grid></game-grid>
-        </div>
-    </div>
-    <footer class="page-footer">
-        <div class="container">
+        </nav>
+        <div class="container" id="main_grid">
             <div class="row">
-                <div class="col s6">
-                    <ul>
-                        <li><a class="grey-text text-lighten-3">Puntos 1</a></li>
-                        <li><a class="grey-text text-lighten-3">Puntos 2</a></li>
-                    </ul>
+                <div class="col s2">
+                    <a class="waves-effect waves-light btn grey lighten-2" id="c00"></a>
+                </div>
+                <div class=" col s2 ">
+                    <a class="waves-effect waves-light btn grey lighten-2" id="c01"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn grey lighten-2" id="c02"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn grey lighten-2" id="c03"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn grey lighten-2" id="c04"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn grey lighten-2" id="c05"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c10"></a>
+                </div>
+                <div class=" col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c11"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c12"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c13"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c14"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c15"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c20"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c21"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c22"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c23"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c24"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c25"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c30"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c31"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c32"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c33"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c34"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c35"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c40"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c41"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c42"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c43"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c44"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c45"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c50"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c51"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c52"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c53"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c54"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c55"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c60"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c61"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c62"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c63"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c64"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c65"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c70"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c71"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c72"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c73"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c74"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c75"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c80"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c81"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c82"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c83"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c84"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn green accent-4" id="c85"></a>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c90"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c91"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c92"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c93"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c94"></a>
+                </div>
+                <div class="col s2 ">
+                    <a class="waves-effect waves-light btn red accent-3" id="c95"></a>
                 </div>
             </div>
         </div>
-    </footer>
 
-</body>
+    </body>
 
 </html>

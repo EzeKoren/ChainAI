@@ -20,3 +20,5 @@ def main():
                 else: num += 1
                 print ("created " + tablero)
         return tablero
+
+main()
