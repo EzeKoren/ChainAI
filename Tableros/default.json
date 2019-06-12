@@ -1,6 +1,5 @@
 {
-    "boxes": [
-        {
+    "boxes": [{
             "cord": "00",
             "cordx": 0,
             "cordy": 0,
@@ -274,11 +273,11 @@
             "cord": "34",
             "cordx": 3,
             "cordy": 4,
-            "points": 0,
+            "points": 1,
             "max": 4,
             "limx": 2,
             "limy": 2,
-            "player": 0
+            "player": "0"
         },
         {
             "cord": "44",
