@@ -3,25 +3,33 @@ from flask_cors import CORS
 from gamelogic import findsquare
 from testfile import main as createfile
 import json
+import os
 
 app = Flask(__name__)
 
 CORS(app)
 
+@app.route('/create', methods=['POST'])
+
+def manage_request1():
+    jsonfile = createfile()
+    print (jsonfile)
+    return jsonfile
+
 @app.route('/input', methods=['POST'])
 
-def manage_request():
-    if request.form['request'] == "getfile":
-        jsonfile = createfile()
-        print (jsonfile)
-        return jsonfile
-    else:
-        cord = request.form['cord']
-        player = request.form['player']
-        print("player: {0}, coord: {1}".format(player, cord))
-        findsquare(cord, "../Tableros/default.json", player)
-        #with open("Tableros/default.json", "r") as json_file:
-        #    return json.dumps(json_file)
-        return json.dumps("{'text':'hola'}")
+def manage_request2():
+    cord = request.form['cord']
+    print (cord)
+    tablero = os.path.join(os.getcwd(), "Tableros", request.form['file'] + ".json")
+    print (tablero)
+    player = request.form['player']
+    print (player)
+    fcode = findsquare(cord, tablero, player)
+    if fcode == "success":
+        with open(tablero, "r") as json_file:
+            data = json.load(json_file)
+            return json.dumps(data)
+    elif fcode == "failed": return "failed"
 
 app.run()

@@ -6,7 +6,7 @@ maxy = 9
 
 example = {
     "cord" : "00",
-    "id" : "#00",
+    "id" : "c00",
     "cordx" : 0,
     "cordy" : 0,
     "points" : 0,
@@ -28,12 +28,12 @@ def reset(example, maxx, maxy, jsonfile):
     curx = 0
     cury = 0
     while curx <= maxx:
-        while cury <= maxy:
+        while cury <= maxy: 
             example["max"] = 0  # Resetting max value
             example["cordx"] = curx
             example["cordy"] = cury
             example["cord"] = str(curx) + str(cury)
-            example["id"] = "#" + example["cord"]
+            example["id"] = "c" + example["cord"]
             example["player"] = 0
             if example["cordx"] == 0:
                 example["limx"] = 1

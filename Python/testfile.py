@@ -19,6 +19,5 @@ def main():
                         populatefile(tablero)
                 else: num += 1
                 print ("created " + tablero)
-        return tablero
+        return str(num)
 
-main()

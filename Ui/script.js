@@ -1,43 +1,66 @@
 $(window).on("load", function() {
     $(document).ready(function() {
         console.log("ready!");
+        player = 1
         M.AutoInit();
-        handle_input("getfile", 0, 0);
-        $('#c00').click(function() {
-            console.log(jsonfile);
-            placedot(1);
+        makefile(1);
+        $("a.btn").click(async function() {
+            if (working == false) {
+                var id = $(this).attr('id');
+                console.log(id);
+                placedot(jsonfile, id, player);
+            }
         });
     });
 });
+var working = false;
+var player;
 var jsonfile;
-var url = "http://127.0.0.1:5000/input";
+var jsonobj;
+var url = "http://127.0.0.1:5000/";
 
-function handle_input(req, cord, player) {
+function makefile(dou, callback) {
+    working = true
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
+    var dir = url + "create";
+    xhr.open("POST", dir, true);
+    xhr.send(null);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+            jsonfile = (xhr.responseText);
+            working = false
+        }
+    };
+}
+
+async function placedot(file, cord, player, callback) {
+    working = true
+    var xhr = new XMLHttpRequest();
+    var dir = url + "input";
+    xhr.open("POST", dir, true);
     var data = new FormData();
-    data.append("request", req);
+    data.append("file", file);
     data.append("cord", cord);
     data.append("player", player);
     xhr.send(data);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            //var jsonobj = JSON.parse(xhr.responseText);
-            console.log(xhr.responseType);
-            jsonfile = (xhr.responseText);
+            jsonobj = JSON.parse(xhr.responseText);
+            console.log(jsonobj);
+            changeplayer()
         }
     };
 }
 
-function placedot(id) {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var jsonobj = JSON.parse(this.responseText);
-            document.getElementById("demo").innerHTML = myObj.name;
-        }
-    };
-    xmlhttp.open("GET", jsonfile, true);
-    xmlhttp.send(file);
-    console.log(jsonobj)
+function changeplayer() {
+    if (jsonobj != "failed") {
+        console.log(player);
+        if (player == 1) { player = 2; } else if (player == 2) { player = 1; }
+    } else M.toast({ html: 'That place is occupied' });
+}
+
+function displayboard() {
+    Object.keys(jsonobj)
+    working = false
 }
