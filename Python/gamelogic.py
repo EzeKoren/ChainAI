@@ -3,6 +3,7 @@
 #----THE SQUARE ISN'T TAKEN ALREADY----#
 ########################################
 
+from multiprocessing import Process
 import json
 import sys
 import os
@@ -35,15 +36,21 @@ def findsquare(boxtocheck, jsonfile, player):
                         ## TRIGGERS EXPANSION
                         print ("expanding")
                         if square["cordx"] == 2:
-                            findsquare(str(square["cordx"] + 1) + str(square["cordy"]), jsonfile, player)
-                            findsquare(str(square["cordx"] - 1) + str(square["cordy"]), jsonfile, player)
+                            p1 = Process(target = findsquare(str(square["cordy"] + 1) + str(square["cordx"]), jsonfile, player))
+                            p1.start
+                            p2 = Process(target = findsquare(str(square["cordy"] - 1) + str(square["cordx"]), jsonfile, player))
+                            p2.stardx                        
                         else: 
-                            findsquare(str(square["cordx"] + square["limx"]) + str(square["cordy"]), jsonfile, player)
+                            p3 = Process(target = findsquare(str(square["cordy"] + square["limy"]) + str(square["cordx"]), jsonfile, player))
+                            p3.start
                         if square["cordy"] == 2:
-                            findsquare(str(square["cordx"]) + str(square["cordy"] + 1), jsonfile, player)
-                            findsquare(str(square["cordx"]) + str(square["cordy"] - 1), jsonfile, player)
+                            p4 = Process(target = findsquare(str(square["cordy"]) + str(square["cordx"] + 1), jsonfile, player))
+                            p4.start
+                            p5 = Process(target = findsquare(str(square["cordy"]) + str(square["cordx"] - 1), jsonfile, player))
+                            p5.start
                         else: 
-                            findsquare(str(square["cordx"]) + str(square["cordy"] + square["limy"]), jsonfile, player)
+                            p6 = Process(target = findsquare(str(square["cordy"]) + str(square["cordx"] + square["limx"]), jsonfile, player))
+                            p6.start
                     else:
                         ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
                         with open (jsonfile, "w") as ndeah:
