@@ -24,6 +24,7 @@ def findsquare(boxtocheck, jsonfile, player):
                     square["player"] = player
                     ## ADDS A POINT TO THE SQUARE
                     square["points"] += 1
+                    
                     ## CHECKS IF POINTS LIMIT IS REACHED
                     if square["points"] == square["max"]:
                         ## RESET THE SQUARE'S POINTS
@@ -45,6 +46,8 @@ def findsquare(boxtocheck, jsonfile, player):
                         else: 
                             findsquare(str(square["cordx"]) + str(square["cordy"] + square["limy"]), jsonfile, player)
                     else:
+                        print("player " + str(square["player"]) + " cord " + str(square["cord"]) + " points " + str(square["points"]))
+                        print("limx " + str(square["limx"]) + " limy " + str(square["limy"]) + " max " + str(square["max"]))
                         ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
                         with open (jsonfile, "w") as ndeah:
                             json.dump(data, ndeah, indent=4)

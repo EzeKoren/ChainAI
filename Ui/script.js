@@ -15,6 +15,7 @@ $(window).on("load", function() {
 });
 var working = false;
 var player;
+var error;
 var jsonfile;
 var jsonobj;
 var url = "http://127.0.0.1:5000/";
@@ -34,7 +35,7 @@ function makefile(dou, callback) {
     };
 }
 
-async function placedot(file, cord, player, callback) {
+function placedot(file, cord, player, callback) {
     working = true
     var xhr = new XMLHttpRequest();
     var dir = url + "input";
@@ -46,21 +47,37 @@ async function placedot(file, cord, player, callback) {
     xhr.send(data);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            jsonobj = JSON.parse(xhr.responseText);
-            console.log(jsonobj);
-            changeplayer()
+            if (xhr.responseText == "failed") { error = true } else {
+                error = false;
+                jsonobj = JSON.parse(xhr.responseText);
+                console.log(jsonobj);
+            };
+            console.log(error)
+            changeplayer();
         }
     };
 }
 
-function changeplayer() {
-    if (jsonobj != "failed") {
+let changeplayer = () => {
+    if (error == false) {
         console.log(player);
         if (player == 1) { player = 2; } else if (player == 2) { player = 1; }
-    } else M.toast({ html: 'That place is occupied' });
+        displayboard();
+    } else {
+        M.toast({ html: 'That place is occupied' });
+        working = false;
+    }
 }
 
-function displayboard() {
-    Object.keys(jsonobj)
-    working = false
+let displayboard = () => {
+    let key = 0;
+    while (key < Object.keys(jsonobj.boxes).length) {
+        // console.log("display keyboard: " + Object(jsonobj.boxes[key].id));
+        let div = document.getElementById(Object(jsonobj.boxes[key].id));
+        if (Object(jsonobj.boxes[key].points) != 0) {
+            div.innerHTML = Object(jsonobj.boxes[key].points)
+        }
+        key++;
+    }
+    working = false;
 }
