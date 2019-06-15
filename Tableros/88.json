@@ -17,11 +17,11 @@
             "id": "c01",
             "cordx": 1,
             "cordy": 0,
-            "points": 0,
+            "points": 1,
             "max": 3,
             "limx": 2,
             "limy": 1,
-            "player": 0,
+            "player": "2",
             "tilexp": 3
         },
         {
@@ -29,11 +29,11 @@
             "id": "c02",
             "cordx": 2,
             "cordy": 0,
-            "points": 0,
+            "points": 1,
             "max": 3,
             "limx": 2,
             "limy": 1,
-            "player": 0,
+            "player": "1",
             "tilexp": 3
         },
         {

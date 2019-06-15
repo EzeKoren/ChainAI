@@ -17,11 +17,11 @@
             "id": "c01",
             "cordx": 1,
             "cordy": 0,
-            "points": 0,
+            "points": 1,
             "max": 3,
             "limx": 2,
             "limy": 1,
-            "player": 0,
+            "player": "2",
             "tilexp": 3
         },
         {
@@ -77,11 +77,11 @@
             "id": "c10",
             "cordx": 0,
             "cordy": 1,
-            "points": 0,
+            "points": 1,
             "max": 3,
             "limx": 1,
             "limy": 2,
-            "player": 0,
+            "player": "2",
             "tilexp": 3
         },
         {
@@ -89,11 +89,11 @@
             "id": "c11",
             "cordx": 1,
             "cordy": 1,
-            "points": 0,
+            "points": 1,
             "max": 4,
             "limx": 2,
             "limy": 2,
-            "player": 0,
+            "player": "1",
             "tilexp": 4
         },
         {
@@ -149,11 +149,11 @@
             "id": "c20",
             "cordx": 0,
             "cordy": 2,
-            "points": 0,
+            "points": 1,
             "max": 3,
             "limx": 1,
             "limy": 2,
-            "player": 0,
+            "player": "1",
             "tilexp": 3
         },
         {
@@ -161,11 +161,11 @@
             "id": "c21",
             "cordx": 1,
             "cordy": 2,
-            "points": 0,
+            "points": 1,
             "max": 4,
             "limx": 2,
             "limy": 2,
-            "player": 0,
+            "player": "2",
             "tilexp": 4
         },
         {
@@ -221,11 +221,11 @@
             "id": "c30",
             "cordx": 0,
             "cordy": 3,
-            "points": 0,
+            "points": 1,
             "max": 3,
             "limx": 1,
             "limy": 2,
-            "player": 0,
+            "player": "1",
             "tilexp": 3
         },
         {
@@ -233,11 +233,11 @@
             "id": "c31",
             "cordx": 1,
             "cordy": 3,
-            "points": 0,
+            "points": 1,
             "max": 4,
             "limx": 2,
             "limy": 2,
-            "player": 0,
+            "player": "1",
             "tilexp": 4
         },
         {
@@ -293,11 +293,11 @@
             "id": "c40",
             "cordx": 0,
             "cordy": 4,
-            "points": 0,
+            "points": 1,
             "max": 3,
             "limx": 1,
             "limy": 2,
-            "player": 0,
+            "player": "2",
             "tilexp": 3
         },
         {
@@ -305,11 +305,11 @@
             "id": "c41",
             "cordx": 1,
             "cordy": 4,
-            "points": 0,
+            "points": 1,
             "max": 4,
             "limx": 2,
             "limy": 2,
-            "player": 0,
+            "player": "2",
             "tilexp": 4
         },
         {

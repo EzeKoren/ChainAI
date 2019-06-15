@@ -13,6 +13,9 @@ $(window).on("load", function() {
         });
     });
 });
+var colorempty = "#e0e0e0"
+var color1 = "#ff5252"
+var color2 = "#388e3c"
 var working = false;
 var player;
 var error;
@@ -62,9 +65,11 @@ let changeplayer = () => {
     if (error == false) {
         console.log(player);
         if (player == 1) { player = 2; } else if (player == 2) { player = 1; }
+        M.Toast.dismissAll();
         displayboard();
     } else {
-        M.toast({ html: 'That place is occupied' });
+        M.Toast.dismissAll();
+        M.toast({ html: 'Está ocupado el lugar' });
         working = false;
     }
 }
@@ -74,8 +79,20 @@ let displayboard = () => {
     while (key < Object.keys(jsonobj.boxes).length) {
         // console.log("display keyboard: " + Object(jsonobj.boxes[key].id));
         let div = document.getElementById(Object(jsonobj.boxes[key].id));
-        if (Object(jsonobj.boxes[key].points) != 0) {
-            div.innerHTML = Object(jsonobj.boxes[key].points)
+        var points = Number(Object(jsonobj.boxes[key].points));
+        console.log(points);
+        if (points == 1) {
+
+            div.innerHTML = "<img class = 'icon' src = './icon/1.png'>";
+        }
+        if (points == 2) {
+            div.innerHTML = "<img class = 'icon' src = './icon/2.png'>";
+        }
+        if (points == 3) {
+            div.innerHTML = "<img class = 'icon' src = './icon/3.png'>";
+        }
+        if (points == 0) {
+            div.innerHTML = "<img class = 'icon' src = './icon/0.png'>";
         }
         key++;
     }

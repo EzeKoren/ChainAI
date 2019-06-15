@@ -25,8 +25,9 @@ def findsquare(boxtocheck, jsonfile, player):
                     square["player"] = player
                     ## ADDS A POINT TO THE SQUARE
                     square["points"] += 1
-                    
                     ## CHECKS IF POINTS LIMIT IS REACHED
+                    print(str("player " + str(square["player"]) + " cord " + str(square["cord"]) + " points " + str(square["points"])))
+                    print(str("limx " + str(square["limx"]) + " limy " + str(square["limy"]) + " max " + str(square["max"])))
                     if square["points"] == square["max"]:
                         ## RESET THE SQUARE'S POINTS
                         square["points"] = 0
@@ -36,28 +37,52 @@ def findsquare(boxtocheck, jsonfile, player):
                             json.dump(data, ndeah, indent=4)
                         ## TRIGGERS EXPANSION
                         print ("expanding")
-                        if square["cordx"] == 2:
-                            p1 = Process(target = findsquare(str(square["cordy"] + 1) + str(square["cordx"]), jsonfile, player))
-                            p1.start
-                            p2 = Process(target = findsquare(str(square["cordy"] - 1) + str(square["cordx"]), jsonfile, player))
-                            p2.stardx                        
+                        print (str(square["cordy"]) + ", " + str(square["cordy"] + 1) + ", " + str(square["cordy"] - 1))
+                        print (str(square["cordx"]) + ", " + str(square["cordx"] + 1) + ", " + str(square["cordx"] - 1))
+                        if square["limy"] == 2:
+                            data = second(str(square["cordy"] + 1) + str(square["cordx"]), data, player)          
+                            data = second(str(square["cordy"] - 1) + str(square["cordx"]), data, player)
                         else: 
-                            p3 = Process(target = findsquare(str(square["cordy"] + square["limy"]) + str(square["cordx"]), jsonfile, player))
-                            p3.start
-                        if square["cordy"] == 2:
-                            p4 = Process(target = findsquare(str(square["cordy"]) + str(square["cordx"] + 1), jsonfile, player))
-                            p4.start
-                            p5 = Process(target = findsquare(str(square["cordy"]) + str(square["cordx"] - 1), jsonfile, player))
-                            p5.start
+                            data = second(str(square["cordy"] + square["limy"]) + str(square["cordx"]), data, player)
+                        if square["limx"] == 2:
+                            data = second(str(square["cordy"]) + str(square["cordx"] + 1), data, player)
+                            data = second(str(square["cordy"]) + str(square["cordx"] - 1), data, player)
                         else: 
-                            p6 = Process(target = findsquare(str(square["cordy"]) + str(square["cordx"] + square["limx"]), jsonfile, player))
-                            p6.start
-                    else:
-                        print("player " + str(square["player"]) + " cord " + str(square["cord"]) + " points " + str(square["points"]))
-                        print("limx " + str(square["limx"]) + " limy " + str(square["limy"]) + " max " + str(square["max"]))
-                        ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
-                        with open (jsonfile, "w") as ndeah:
-                            json.dump(data, ndeah, indent=4)
+                            data = second(str(square["cordy"]) + str(square["cordx"] + square["limx"]), data, player)
+                    print("done")
+                    ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
+                    with open (jsonfile, "w") as ndeah:
+                        json.dump(data, ndeah, indent=4)
                     return "success"
                 else: 
                     return "failed"
+
+def second(boxtocheck, data, player):
+    for square in data["boxes"]:
+        if square["cord"] == boxtocheck or square["id"] == boxtocheck:
+            ## MARKS POSITION AS TAKEN BY PLAYER
+            square["player"] = player
+            ## ADDS A POINT TO THE SQUARE
+            square["points"] += 1
+            ## CHECKS IF POINTS LIMIT IS REACHED
+            print("player " + str(square["player"]) + " cord " + str(square["cord"]) + " points " + str(square["points"]))
+            print("limx " + str(square["limx"]) + " limy " + str(square["limy"]) + " max " + str(square["max"]))
+            if square["points"] == square["max"]:
+                ## RESET THE SQUARE'S POINTS
+                square["points"] = 0
+                square["player"] = 0
+                ## TRIGGERS EXPANSION
+                print ("expanding")
+                print (str(square["cordy"]) + ", " + str(square["cordy"] + 1) + ", " + str(square["cordy"] - 1))
+                print (str(square["cordx"]) + ", " + str(square["cordx"] + 1) + ", " + str(square["cordx"] - 1))
+                if square["limy"] == 2:
+                    data = second(str(square["cordy"] + 1) + str(square["cordx"]), data, player)          
+                    data = second(str(square["cordy"] - 1) + str(square["cordx"]), data, player)
+                else: 
+                    data = second(str(square["cordy"] + square["limy"]) + str(square["cordx"]), data, player)
+                if square["limx"] == 2:
+                    data = second(str(square["cordy"]) + str(square["cordx"] + 1), data, player)
+                    data = second(str(square["cordy"]) + str(square["cordx"] - 1), data, player)
+                else: 
+                    data = second(str(square["cordy"]) + str(square["cordx"] + square["limx"]), data, player)
+            return (data)
