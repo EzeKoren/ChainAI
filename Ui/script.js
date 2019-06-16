@@ -3,9 +3,10 @@ $(window).on("load", function() {
         console.log("ready!");
         player = 1
         M.AutoInit();
-        makefile(1);
+        makefile();
         $("a.btn").click(async function() {
             if (working == false) {
+                working = true;
                 var id = $(this).attr('id');
                 console.log(id);
                 placedot(jsonfile, id, player);
@@ -13,17 +14,23 @@ $(window).on("load", function() {
         });
     });
 });
-var colorempty = "#e0e0e0"
-var color1 = "#ff5252"
-var color2 = "#388e3c"
+var turncount = 0;
+var colorempty1 = "grey";
+var colorempty2 = "lighten-2";
+var color11 = "red";
+var color12 = "accent-2";
+var color21 = "green";
+var color22 = "darken-2";
 var working = false;
 var player;
 var error;
 var jsonfile;
 var jsonobj;
 var url = "http://127.0.0.1:5000/";
+var p1;
+var p2;
 
-function makefile(dou, callback) {
+function makefile() {
     working = true
     var xhr = new XMLHttpRequest();
     var dir = url + "create";
@@ -39,7 +46,6 @@ function makefile(dou, callback) {
 }
 
 function placedot(file, cord, player, callback) {
-    working = true
     var xhr = new XMLHttpRequest();
     var dir = url + "input";
     xhr.open("POST", dir, true);
@@ -63,6 +69,7 @@ function placedot(file, cord, player, callback) {
 
 let changeplayer = () => {
     if (error == false) {
+        turncount++
         console.log(player);
         if (player == 1) { player = 2; } else if (player == 2) { player = 1; }
         M.Toast.dismissAll();
@@ -74,15 +81,16 @@ let changeplayer = () => {
     }
 }
 
-let displayboard = () => {
-    let key = 0;
+function displayboard() {
+    var key = 0;
+    p1 = 0;
+    p2 = 0;
     while (key < Object.keys(jsonobj.boxes).length) {
         // console.log("display keyboard: " + Object(jsonobj.boxes[key].id));
-        let div = document.getElementById(Object(jsonobj.boxes[key].id));
+        var div = document.getElementById(Object(jsonobj.boxes[key].id));
         var points = Number(Object(jsonobj.boxes[key].points));
         console.log(points);
         if (points == 1) {
-
             div.innerHTML = "<img class = 'icon' src = './icon/1.png'>";
         }
         if (points == 2) {
@@ -94,7 +102,71 @@ let displayboard = () => {
         if (points == 0) {
             div.innerHTML = "<img class = 'icon' src = './icon/0.png'>";
         }
+        changecolor(div, Number(Object(jsonobj.boxes[key].player)), true)
         key++;
     }
+    if (turncount >= 2) {
+        if (p1 == 0) {
+            M.toast({ html: 'Gano el 2' });
+            makefile();
+            turncount = 0;
+            displayboard();
+        }
+        if (p2 == 0) {
+            M.toast({ html: 'Gano el 1' });
+            makefile();
+            turncount = 0;
+            displayboard();
+        }
+    }
+    changecolor(document.getElementById("titlebar"), player, false);
     working = false;
+}
+
+function changecolor(div, player, counting) {
+    switch (player) {
+        case 1:
+            if (div.classList.contains(colorempty1)) {
+                div.classList.remove(colorempty1);
+                div.classList.remove(colorempty2);
+                div.classList.add(color11);
+                div.classList.add(color12);
+            }
+            if (div.classList.contains(color21)) {
+                div.classList.remove(color21);
+                div.classList.remove(color22);
+                div.classList.add(color11);
+                div.classList.add(color12);
+            }
+            p1++;
+            break;
+        case 2:
+            if (div.classList.contains(colorempty1)) {
+                div.classList.remove(colorempty1);
+                div.classList.remove(colorempty2);
+                div.classList.add(color21);
+                div.classList.add(color22);
+            }
+            if (div.classList.contains(color11)) {
+                div.classList.remove(color11);
+                div.classList.remove(color12);
+                div.classList.add(color21);
+                div.classList.add(color22);
+            }
+            p2++;
+            break;
+        default:
+            if (div.classList.contains(color11)) {
+                div.classList.remove(color11);
+                div.classList.remove(color12);
+                div.classList.add(colorempty1);
+                div.classList.add(colorempty2);
+            }
+            if (div.classList.contains(color21)) {
+                div.classList.remove(color21);
+                div.classList.remove(color22);
+                div.classList.add(colorempty1);
+                div.classList.add(colorempty2);
+            }
+    }
 }
