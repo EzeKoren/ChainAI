@@ -26,6 +26,8 @@ var player;
 var error;
 var jsonfile;
 var jsonobj;
+var obserb1 = {};
+var obserb2 = {};
 var url = "http://127.0.0.1:5000/";
 var p1;
 var p2;
@@ -67,11 +69,14 @@ function placedot(file, cord, player, callback) {
     };
 }
 
-let changeplayer = () => {
+function changeplayer() {
     if (error == false) {
         turncount++
         console.log(player);
-        if (player == 1) { player = 2; } else if (player == 2) { player = 1; }
+        if (player == 1) {
+            player = 2;
+            turncount++;
+        } else if (player == 2) { player = 1; }
         M.Toast.dismissAll();
         displayboard();
     } else {
@@ -105,7 +110,7 @@ function displayboard() {
         changecolor(div, Number(Object(jsonobj.boxes[key].player)), true)
         key++;
     }
-    if (turncount >= 2) {
+    if (turncount > 1) {
         if (p1 == 0) {
             M.toast({ html: 'Gano el 2' });
             makefile();

@@ -2,23 +2,45 @@ html {
     font-family: 'Fira Sans', sans-serif;
 }
 
-.row {
-    margin: 5% 5% 5% 5%;
-}
-
-.btn {
-    display: inline-block;
-    height: auto;
-    text-align: left;
+.containernt {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .icon {
-    max-width: 200%;
-    max-height: 200%;
-    margin: 8px 12px 0 0;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: auto;
+    padding-bottom: auto;
 }
 
-.containernt {
-    position: absolute;
-    padding: 0 1% 0 0;
+.button {
+    display: inline-block;
+    /* height: 100%; */
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 100%;
 }
+
+
+/* .btn {
+    position: relative;
+    padding-top: 100%;
+    display: inline-block;
+}
+
+.button {
+    margin: 10% 10% 10% 10%;
+    display: inline-block;
+}
+
+.icon {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+} */
