@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_cors import CORS
 from gamelogic import findsquare
 from testfile import main as createfile
+from AI import preparedata
 import json
 import os
 
@@ -13,23 +14,25 @@ CORS(app)
 
 def manage_request1():
     jsonfile = createfile()
-    print (jsonfile)
-    return jsonfile
+    return str(jsonfile)
 
 @app.route('/input', methods=['POST'])
 
 def manage_request2():
     cord = request.form['cord']
-    print (cord)
     tablero = os.path.join(os.getcwd(), "Tableros", request.form['file'] + ".json")
-    print (tablero)
     player = request.form['player']
-    print (player)
     fcode = findsquare(cord, tablero, player)
-    if fcode == "success":
-        with open(tablero, "r") as json_file:
-            data = json.load(json_file)
-            return json.dumps(data)
-    elif fcode == "failed": return "failed"
+    return fcode
+
+@app.route('/appenddata', methods=['POST'])
+
+def manage_request3():
+    player = request.form['player']
+    print(player)
+    data = request.form['data']
+    print(data)
+    preparedata(player, data)
+    return("done")
 
 app.run()

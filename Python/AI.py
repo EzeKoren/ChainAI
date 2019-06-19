@@ -9,11 +9,24 @@ from gamelogic          import findsquare as findsquare
 from testfile import main as createfile
 from createfile import main as reset
 
-
-
-tablero = createfile()
-goal_steps = 10
-intial_games = 10000
+def preparedata(player, data):
+    log = os.path.join(os.getcwd(), "ai.data")
+    if player == 2: 
+        for i in data:
+            for u in i[0["boxes"]]:
+                if u["player"] == 1:
+                    u["player"] = 2
+                elif u["player"] == 2:
+                    u["player"] = 1
+    print(data)
+    with open(log, "r") as j:
+        arrei = list(j.read())
+    arrei.append(data)
+    with open(log, "w") as o:
+        o.write(str(arrei))
+# tablero = createfile()
+# goal_steps = 10
+# intial_games = 10000
 
 # def model_data_preparation_1():
 #     player = 1
@@ -58,7 +71,7 @@ intial_games = 10000
 #             score += reward
 #             if done:
 #                 break
-            
+          
 #         if score > 0:
 #             accepted_scores.append(score)
 #             for data in game_memory:
@@ -70,7 +83,7 @@ intial_games = 10000
 #         reset(tablero)
 
 #     print(accepted_scores)
-    
+  
 #     return training_data
 
 def build_model(input_size, output_size):

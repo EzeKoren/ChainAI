@@ -7,17 +7,17 @@ def main():
         found = False
         while found == False:
                 folder = os.getcwd()
-                print(folder)
                 tablero = os.path.join(folder, "Tableros", str(num) + ".json")
-                print(folder)
-                print(tablero)
                 if os.path.isfile(tablero) == False:
                         print(tablero)
                         found = True
-                        print(folder, 'is there', os.path.isdir(folder))
                         open(tablero, "w+")
                         populatefile(tablero)
+                        obj = open(tablero, "r").read().replace('\n', '')
                 else: num += 1
-                print ("created " + tablero)
-        return str(num)
+        print ("created " + tablero)
+        toreturn = {}
+        toreturn["file"] = num
+        toreturn["obj"] = obj
+        return json.dumps(toreturn)
 

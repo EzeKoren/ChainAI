@@ -53,7 +53,10 @@ def findsquare(boxtocheck, jsonfile, player):
                     ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
                     with open (jsonfile, "w") as ndeah:
                         json.dump(data, ndeah, indent=4)
-                    return "success"
+                        toreturn = {}
+                        toreturn["obj"] = data
+                        toreturn["cord"] = square["cord"]
+                        return json.dumps(toreturn)
                 else: 
                     return "failed"
 
