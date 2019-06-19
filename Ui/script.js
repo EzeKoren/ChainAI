@@ -71,12 +71,12 @@ function placedot(file, cord, player, callback) {
 
 function changeplayer() {
     if (error == false) {
-        turncount++
         console.log(player);
         if (player == 1) {
             player = 2;
             turncount++;
         } else if (player == 2) { player = 1; }
+        console.log("turno " + turncount);
         M.Toast.dismissAll();
         displayboard();
     } else {
