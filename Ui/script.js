@@ -26,23 +26,30 @@ var player;
 var error;
 var jsonfile;
 var jsonobj;
-var obserb1 = {};
-var obserb2 = {};
+var obserb1 = [];
+var obserb2 = [];
 var url = "http://127.0.0.1:5000/";
 var p1;
 var p2;
+var step;
 
 function makefile() {
     working = true
+    obserb1 = [];
+    obserb2 = [];
     var xhr = new XMLHttpRequest();
     var dir = url + "create";
     xhr.open("POST", dir, true);
     xhr.send(null);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(xhr.responseText);
-            jsonfile = (xhr.responseText);
-            working = false
+            returned = JSON.parse(xhr.responseText);
+            jsonfile = returned.file;
+            jsonobj = JSON.parse(returned.obj);
+            oldobj = jsonobj;
+            displayboard();
+            console.log(jsonfile);
+            console.log(jsonobj);
         }
     };
 }
@@ -60,13 +67,31 @@ function placedot(file, cord, player, callback) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             if (xhr.responseText == "failed") { error = true } else {
                 error = false;
-                jsonobj = JSON.parse(xhr.responseText);
+                oldobj = jsonobj;
+                returned = JSON.parse(xhr.responseText);
+                jsonobj = returned.obj;
+                step = returned.cord;
+                console.log(oldobj);
+                console.log(step);
                 console.log(jsonobj);
+                appenddata(player);
             };
-            console.log(error)
+            console.log(error);
             changeplayer();
         }
     };
+}
+
+function appenddata(pl) {
+    if (pl == 1) {
+        preadd = [oldobj, String(step)]
+        obserb1.push(preadd);
+        console.log(obserb1);
+    } else if (pl == 2) {
+        preadd = [oldobj, String(step)]
+        obserb2.push(preadd);
+        console.log(obserb2);
+    }
 }
 
 function changeplayer() {
@@ -113,15 +138,15 @@ function displayboard() {
     if (turncount > 1) {
         if (p1 == 0) {
             M.toast({ html: 'Gano el 2' });
-            makefile();
             turncount = 0;
-            displayboard();
+            sendtoai(2);
+            makefile();
         }
         if (p2 == 0) {
             M.toast({ html: 'Gano el 1' });
-            makefile();
             turncount = 0;
-            displayboard();
+            sendtoai(1);
+            makefile();
         }
     }
     changecolor(document.getElementById("titlebar"), player, false);
@@ -173,5 +198,29 @@ function changecolor(div, player, counting) {
                 div.classList.add(colorempty1);
                 div.classList.add(colorempty2);
             }
+    }
+}
+
+function sendtoai(player) {
+
+    if (player == 1) {
+        console.log(obserb1);
+        var xhr = new XMLHttpRequest();
+        var dir = url + "appenddata";
+        xhr.open("POST", dir, true);
+        var data = new FormData();
+        data.append("player", 1);
+        data.append("data", String(obserb1));
+        xhr.send(data);
+    }
+    if (player == 2) {
+        console.log(obserb2);
+        var xhr = new XMLHttpRequest();
+        var dir = url + "appenddata";
+        xhr.open("POST", dir, true);
+        var data = new FormData();
+        data.append("player", 2);
+        data.append("data", String(obserb2));
+        xhr.send(data);
     }
 }

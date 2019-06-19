@@ -56,7 +56,6 @@ def reset(example, maxx, maxy, jsonfile):
                 example["max"] += 2
             example["tilexp"] = example["max"]
             toprint = json.dumps(example, indent=4)
-            print(toprint)
             with open (jsonfile, "a") as out:
                 json.dump(example, out, indent=4)
                 if curx == maxx and cury == maxy:
