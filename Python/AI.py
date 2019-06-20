@@ -10,7 +10,7 @@ from testfile import main as createfile
 from createfile import main as reset
 
 def preparedata(player, data):
-    log = os.path.join(os.getcwd(), "ai.data")
+    log = os.path.join(os.getcwd(), "aidata.py")
     if player == 2: 
         for i in data:
             for u in i[0["boxes"]]:
