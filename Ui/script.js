@@ -1,7 +1,6 @@
 $(window).on("load", function() {
     $(document).ready(function() {
         console.log("ready!");
-        player = 1
         M.AutoInit();
         makefile();
         $("a.btn").click(async function() {
@@ -28,13 +27,14 @@ var jsonfile;
 var jsonobj;
 var obserb1 = [];
 var obserb2 = [];
-var url = "http://127.0.0.1:5000/";
+var url = "http://0.0.0.0:325/";
 var p1;
 var p2;
 var step;
 
 function makefile() {
     working = true
+    player = 1
     obserb1 = [];
     obserb2 = [];
     var xhr = new XMLHttpRequest();

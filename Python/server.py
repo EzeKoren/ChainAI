@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_cors import CORS
 from gamelogic import findsquare
 from testfile import main as createfile
@@ -35,4 +35,4 @@ def manage_request3():
     preparedata(player, data)
     return("done")
 
-app.run()
+app.run('0.0.0.0', port=325)
