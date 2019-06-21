@@ -31,7 +31,6 @@ def manage_request3():
     player = request.form['player']
     print(player)
     data = request.form['data']
-    print(data)
     preparedata(player, data)
     return("done")
 

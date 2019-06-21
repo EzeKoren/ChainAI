@@ -13,6 +13,7 @@ def preparedata(player, data):
     log = os.path.join(os.getcwd(), "ai.data")
     if player == 2: 
         for i in data:
+            i[0["boxes"]] = json.loads(i[0["boxes"]])
             for u in i[0["boxes"]]:
                 if u["player"] == 1:
                     u["player"] = 2

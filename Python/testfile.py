@@ -7,6 +7,8 @@ def main():
         found = False
         while found == False:
                 folder = os.getcwd()
+                if os.path.isdir(os.path.join(folder, "Tableros")) == False:
+                        os.mkdir(os.path.join(folder, "Tableros"))
                 tablero = os.path.join(folder, "Tableros", str(num) + ".json")
                 if os.path.isfile(tablero) == False:
                         print(tablero)

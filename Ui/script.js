@@ -70,7 +70,7 @@ function placedot(file, cord, player, callback) {
                 oldobj = jsonobj;
                 returned = JSON.parse(xhr.responseText);
                 jsonobj = returned.obj;
-                step = returned.cord;
+                step = String(returned.cord);
                 console.log(oldobj);
                 console.log(step);
                 console.log(jsonobj);
@@ -84,11 +84,11 @@ function placedot(file, cord, player, callback) {
 
 function appenddata(pl) {
     if (pl == 1) {
-        preadd = [oldobj, String(step)]
+        preadd = [JSON.stringify(oldobj), step]
         obserb1.push(preadd);
         console.log(obserb1);
     } else if (pl == 2) {
-        preadd = [oldobj, String(step)]
+        preadd = [JSON.stringify(oldobj), step]
         obserb2.push(preadd);
         console.log(obserb2);
     }
@@ -210,7 +210,7 @@ function sendtoai(player) {
         xhr.open("POST", dir, true);
         var data = new FormData();
         data.append("player", 1);
-        data.append("data", String(obserb1));
+        data.append("data", obserb1);
         xhr.send(data);
     }
     if (player == 2) {
@@ -220,7 +220,7 @@ function sendtoai(player) {
         xhr.open("POST", dir, true);
         var data = new FormData();
         data.append("player", 2);
-        data.append("data", String(obserb2));
+        data.append("data", obserb2);
         xhr.send(data);
     }
 }
