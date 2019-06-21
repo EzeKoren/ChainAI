@@ -35,4 +35,4 @@ def manage_request3():
     preparedata(player, data)
     return("done")
 
-app.run('0.0.0.0', port=80, ssl_context='adhoc')
+app.run('0.0.0.0', port=80)
