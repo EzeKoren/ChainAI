@@ -27,7 +27,7 @@ var jsonfile;
 var jsonobj;
 var obserb1 = [];
 var obserb2 = [];
-var url = "https://34.226.68.10:80/";
+var url = "http://34.226.68.10:80/";
 var p1;
 var p2;
 var step;
