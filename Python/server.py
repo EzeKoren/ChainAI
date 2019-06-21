@@ -5,6 +5,10 @@ from testfile import main as createfile
 from AI import preparedata
 import json
 import os
+from OpenSSL import SSL
+context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+context.use_privatekey_file('server.key')
+context.use_certificate_file('server.crt')
 
 app = Flask(__name__)
 
@@ -35,4 +39,4 @@ def manage_request3():
     preparedata(player, data)
     return("done")
 
-app.run('0.0.0.0', port=80, ssl_context='adhoc')
+app.run('0.0.0.0', port=80, ssl_context=('cert.pem', 'key.pem'))
