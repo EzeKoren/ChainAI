@@ -6,11 +6,8 @@ from AI import preparedata
 import json
 import os
 
-
-# cert = os.path.join(os.getcwd(), "https", 'cert.pem')
-# key = os.path.join(os.getcwd(), "https", 'key.pem')
-# cert = os.path.join(os.getcwd(), "letsencrypt", 'cert.pem')
-# key = os.path.join(os.getcwd(), "letsencrypt", 'key.pem')
+cert = os.path.join(os.getcwd(), "https", 'cert.pem')
+key = os.path.join(os.getcwd(), "https", 'key.pem')
 
 app = Flask(__name__)
 
@@ -41,4 +38,4 @@ def manage_request3():
     preparedata(player, data)
     return("done")
 
-app.run('0.0.0.0', port=80)
+app.run('0.0.0.0', port=80, ssl_context=(cert, key))
