@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from flask_cors import CORS
 from gamelogic import findsquare
 from testfile import main as createfile
-from AI import preparedata
+from Ai import preparedata
 import json
 import os
 
@@ -32,6 +32,6 @@ def manage_request3():
     print(player)
     data = request.form['data']
     preparedata(player, data)
-    return("done")
+    return "done"
 
 app.run('0.0.0.0', port=80)

@@ -56,9 +56,9 @@ def findsquare(boxtocheck, jsonfile, player):
                         toreturn = {}
                         toreturn["obj"] = data
                         toreturn["cord"] = square["cord"]
-                        return (str(json.dumps(toreturn)))
+                        return str(json.dumps(toreturn))
                 else: 
-                    return ("failed")
+                    return "failed"
 
 def second(boxtocheck, data, player):
     for square in data["boxes"]:
@@ -88,4 +88,4 @@ def second(boxtocheck, data, player):
                     data = second(str(square["cordy"]) + str(square["cordx"] - 1), data, player)
                 else: 
                     data = second(str(square["cordy"]) + str(square["cordx"] + square["limx"]), data, player)
-            return (data)
+            return data
