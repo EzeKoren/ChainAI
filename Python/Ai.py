@@ -4,7 +4,7 @@ import json
 from testfile import main as cf
 import createfile
 import numpy as np
-
+# nut
 def aimanager():
     tablero = json.loads(cf())["file"]
     envp1 = board(1, tablero)
