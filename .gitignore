@@ -1,1 +1,3 @@
 /.vscode
+/Tableros/*.json
+/Python/__pycache__
