@@ -201,26 +201,25 @@ function changecolor(div, player, counting) {
     }
 }
 
-function sendtoai(player) {
-
-    if (player == 1) {
-        console.log(obserb1);
-        var xhr = new XMLHttpRequest();
-        var dir = url + "appenddata";
-        xhr.open("POST", dir, true);
-        var data = new FormData();
-        data.append("player", 1);
-        data.append("data", obserb1);
-        xhr.send(data);
-    }
-    if (player == 2) {
-        console.log(obserb2);
-        var xhr = new XMLHttpRequest();
-        var dir = url + "appenddata";
-        xhr.open("POST", dir, true);
-        var data = new FormData();
-        data.append("player", 2);
-        data.append("data", obserb2);
-        xhr.send(data);
-    }
-}
+// function sendtoai(player) {
+//     if (player == 1) {
+//         console.log(obserb1);
+//         var xhr = new XMLHttpRequest();
+//         var dir = url + "appenddata";
+//         xhr.open("POST", dir, true);
+//         var data = new FormData();
+//         data.append("player", 1);
+//         data.append("data", obserb1);
+//         xhr.send(data);
+//     }
+//     if (player == 2) {
+//         console.log(obserb2);
+//         var xhr = new XMLHttpRequest();
+//         var dir = url + "appenddata";
+//         xhr.open("POST", dir, true);
+//         var data = new FormData();
+//         data.append("player", 2);
+//         data.append("data", obserb2);
+//         xhr.send(data);
+//     }
+// }

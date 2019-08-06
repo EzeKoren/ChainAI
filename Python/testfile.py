@@ -6,10 +6,9 @@ def main():
         num = 1
         found = False
         while found == False:
-                folder = os.getcwd()
-                if os.path.isdir(os.path.join(folder, "Tableros")) == False:
-                        os.mkdir(os.path.join(folder, "Tableros"))
-                tablero = os.path.join(folder, "Tableros", str(num) + ".json")
+                if os.path.isdir(os.path.join(os.getcwd(), "Tableros")) == False:
+                        os.mkdir(os.path.join(os.getcwd(), "Tableros"))
+                tablero = os.path.join(os.getcwd(), "Tableros", str(num) + ".json")
                 if os.path.isfile(tablero) == False:
                         print(tablero)
                         found = True
@@ -17,9 +16,9 @@ def main():
                         populatefile(tablero)
                         obj = open(tablero, "r").read().replace('\n', '')
                 else: num += 1
-        print ("created " + tablero)
         toreturn = {}
-        toreturn["file"] = num
+        toreturn["file"] = tablero
+        toreturn["num"] = num
         toreturn["obj"] = obj
         return json.dumps(toreturn)
 

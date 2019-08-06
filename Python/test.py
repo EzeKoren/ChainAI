@@ -1,11 +1,10 @@
-#%%
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all"
-import sys
-sys.path.append('F:\ChainAI\Python')
-from testfile import main as tf
-import json
-received = json.loads(tf())
-obj = json.loads(received["obj"])
-display (obj)
-#%%
+from GameManager import game
+
+a = game()
+a.newGame(4)
+
+f = a.makeMove(1, 3, 7)
+
+a.getCurrentInfo(2)
+
+print("breakpoint")
