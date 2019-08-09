@@ -8,7 +8,7 @@ maxy = 9
 
 class game:
     def newGame (self):
-        s = json.loads(create(self.boardnum))
+        s = json.loads(create())
         self.boardpath = s["file"]
         self.boardobj = json.loads(s["obj"])
         self.boardnum = s["num"]
@@ -19,16 +19,15 @@ class game:
         self.boardpath = os.path.join(os.getcwd(), "Tableros", str(board) + ".json")
         self.boardobj = json.loads(open(self.boardpath, "r").read().replace('\n', ''))
         
-    def makeMove (self, player, cordx, cordy):
+    def makeMove (self, player, cord):
         if self.turn == player:
-            move = str(cordy) + str(cordx)
-            self.boardobj = json.loads(findsquare(move, self.boardpath, player))["obj"]
+            self.boardobj = json.loads(findsquare(cord, self.boardpath, player))["obj"]
             if player == 1: player = 2
             elif player == 2: player = 1
             
-            return ("success")
+            return (json.dumps(self.boardobj))
         else: 
-            return ("error")
+            return ("failed")
     
     def getCurrentInfo (self, player): 
         self.state = [[0,0,0,0,0,0],
