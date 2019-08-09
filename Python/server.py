@@ -9,11 +9,10 @@ app = Flask(__name__)
 
 
 CORS(app)
-
+current = game()
 @app.route('/create', methods=['POST'])
 
 def manage_request1():
-    current = game()
     current.newGame()
     jsonfile = json.dumps(current.boardobj)
     return str(jsonfile)
@@ -23,7 +22,8 @@ def manage_request1():
 def manage_request2():
     cord = request.form['cord']
     player = request.form['player']
-    fcode = current.makeMove(player, cord)
+    current.makeMove(player, cord)
+    fcode = json.dumps(current.boardobj)
     return fcode
 
 # @app.route('/appenddata', methods=['POST'])

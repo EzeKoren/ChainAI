@@ -20,11 +20,10 @@ class game:
         self.boardobj = json.loads(open(self.boardpath, "r").read().replace('\n', ''))
         
     def makeMove (self, player, cord):
-        if self.turn == player:
+        if str(self.turn) == player:
             self.boardobj = json.loads(findsquare(cord, self.boardpath, player))["obj"]
-            if player == 1: player = 2
-            elif player == 2: player = 1
-            
+            if self.turn == 1: self.turn = 2
+            elif self.turn == 2: self.turn = 1
             return (json.dumps(self.boardobj))
         else: 
             return ("failed")

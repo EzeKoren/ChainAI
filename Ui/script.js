@@ -43,9 +43,8 @@ function makefile() {
     xhr.send(null);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            returned = JSON.parse(xhr.responseText);
-            jsonfile = returned.file;
-            jsonobj = JSON.parse(returned.obj);
+            console.log(xhr.responseText);
+            jsonobj = JSON.parse(xhr.responseText);
             oldobj = jsonobj;
             displayboard();
             console.log(jsonfile);
@@ -68,9 +67,8 @@ function placedot(file, cord, player, callback) {
             if (xhr.responseText == "failed") { error = true } else {
                 error = false;
                 oldobj = jsonobj;
-                returned = JSON.parse(xhr.responseText);
-                jsonobj = returned.obj;
-                step = String(returned.cord);
+                jsonobj = JSON.parse(xhr.responseText);
+                step = String(cord);
                 console.log(oldobj);
                 console.log(step);
                 console.log(jsonobj);
