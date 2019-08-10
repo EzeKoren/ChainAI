@@ -35,4 +35,4 @@ def manage_request2():
 #     preparedata(player, data)
 #     return "done"
 
-app.run('localhost')
+app.run(host='0.0.0.0') 

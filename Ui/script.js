@@ -27,7 +27,7 @@ var jsonfile;
 var jsonobj;
 var obserb1 = [];
 var obserb2 = [];
-var url = "http://localhost:5000/";
+var url = "http://192.168.0.184:5000/";
 var p1;
 var p2;
 var step;
