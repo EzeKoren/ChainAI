@@ -22,9 +22,11 @@ def manage_request1():
 def manage_request2():
     cord = request.form['cord']
     player = request.form['player']
-    current.makeMove(player, cord)
-    fcode = json.dumps(current.boardobj)
-    return fcode
+    if current.makeMove(player, cord) == "failed":
+        return "failed"
+    else:
+        fcode = json.dumps(current.boardobj)
+        return fcode
 
 # @app.route('/appenddata', methods=['POST'])
 
