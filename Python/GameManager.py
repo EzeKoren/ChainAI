@@ -3,11 +3,9 @@ from testfile import main as create
 import json
 import os
 
-maxx = 5
-maxy = 9
-
 class game:
     def newGame (self):
+        self.done = False
         s = json.loads(create())
         self.boardpath = s["file"]
         self.boardobj = json.loads(s["obj"])
@@ -29,6 +27,9 @@ class game:
             return ("failed")
     
     def getCurrentInfo (self, player): 
+        foundp1 = False
+        foundp2 = False
+        self.actions = []
         self.state = [[0,0,0,0,0,0],
                       [0,0,0,0,0,0],
                       [0,0,0,0,0,0],
@@ -39,14 +40,25 @@ class game:
                       [0,0,0,0,0,0],
                       [0,0,0,0,0,0],
                       [0,0,0,0,0,0]]
-        self.actions = []
+        self.score = 0
         for square in self.boardobj["boxes"]:
             cordx = square["cordx"]
             cordy = square["cordy"]
             if square["player"] == player:
-                self.state[cordx][cordy] = square["points"]
-                self.actions.append([cordy, cordx])
+                self.state[cordy][cordx] = square["points"]
+                foundp1 = True
+                self.score += 1
+                self.actions.extend([square["cord"]])
             elif square["player"] != 0:
-                self.state[cordx][cordy] = 0 - square["points"]
+                self.state[cordy][cordx] = 0 - square["points"]
+                foundp2 = True
+                self.score -= 1            
             else:
-                self.actions.append([cordy, cordx])              
+                self.actions.extend([square["cord"]])              
+                print("Pitu estuvo aqui")              
+        if foundp1 == True and foundp2 == False:
+            self.done = True
+            self.score = 10000
+        elif foundp2 == True and foundp1 == False:
+            self.done = True
+            self.score = -10000

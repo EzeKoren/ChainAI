@@ -27,7 +27,7 @@ var jsonfile;
 var jsonobj;
 var obserb1 = [];
 var obserb2 = [];
-var url = "http://192.168.0.184:5000/";
+var url = "http://localhost:5000/";
 var p1;
 var p2;
 var step;
@@ -72,7 +72,6 @@ function placedot(file, cord, player, callback) {
                 console.log(oldobj);
                 console.log(step);
                 console.log(jsonobj);
-                appenddata(player);
             };
             console.log(error);
             changeplayer();
@@ -80,17 +79,7 @@ function placedot(file, cord, player, callback) {
     };
 }
 
-function appenddata(pl) {
-    if (pl == 1) {
-        preadd = [JSON.stringify(oldobj), step]
-        obserb1.push(preadd);
-        console.log(obserb1);
-    } else if (pl == 2) {
-        preadd = [JSON.stringify(oldobj), step]
-        obserb2.push(preadd);
-        console.log(obserb2);
-    }
-}
+
 
 function changeplayer() {
     if (error == false) {
@@ -198,26 +187,3 @@ function changecolor(div, player, counting) {
             }
     }
 }
-
-// function sendtoai(player) {
-//     if (player == 1) {
-//         console.log(obserb1);
-//         var xhr = new XMLHttpRequest();
-//         var dir = url + "appenddata";
-//         xhr.open("POST", dir, true);
-//         var data = new FormData();
-//         data.append("player", 1);
-//         data.append("data", obserb1);
-//         xhr.send(data);
-//     }
-//     if (player == 2) {
-//         console.log(obserb2);
-//         var xhr = new XMLHttpRequest();
-//         var dir = url + "appenddata";
-//         xhr.open("POST", dir, true);
-//         var data = new FormData();
-//         data.append("player", 2);
-//         data.append("data", obserb2);
-//         xhr.send(data);
-//     }
-// }
