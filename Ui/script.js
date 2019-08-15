@@ -1,3 +1,9 @@
+// ------------------------------------------
+
+var url = "http://localhost:5000/";
+
+// ------------------------------------------
+
 $(window).on("load", function() {
     $(document).ready(function() {
         console.log("ready!");
@@ -13,7 +19,6 @@ $(window).on("load", function() {
         });
     });
 });
-var turncount = 0;
 var colorempty1 = "grey";
 var colorempty2 = "lighten-2";
 var color11 = "red";
@@ -23,11 +28,7 @@ var color22 = "darken-2";
 var working = false;
 var player;
 var error;
-var jsonfile;
 var jsonobj;
-var obserb1 = [];
-var obserb2 = [];
-var url = "http://localhost:5000/";
 var p1;
 var p2;
 var step;
@@ -35,19 +36,15 @@ var step;
 function makefile() {
     working = true
     player = 1
-    obserb1 = [];
-    obserb2 = [];
     var xhr = new XMLHttpRequest();
     var dir = url + "create";
     xhr.open("POST", dir, true);
     xhr.send(null);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(xhr.responseText);
             jsonobj = JSON.parse(xhr.responseText);
             oldobj = jsonobj;
             displayboard();
-            console.log(jsonfile);
             console.log(jsonobj);
         }
     };
@@ -125,14 +122,12 @@ function displayboard() {
     if (turncount > 1) {
         if (p1 == 0) {
             M.toast({ html: 'Gano el 2' });
-            turncount = 0;
             sendtoai(2);
             makefile();
         }
         if (p2 == 0) {
             M.toast({ html: 'Gano el 1' });
             turncount = 0;
-            sendtoai(1);
             makefile();
         }
     }

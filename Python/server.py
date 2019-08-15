@@ -48,13 +48,5 @@ def appenddata(player, cord):
             data.append([player2data])
             with open("trainingData", "w") as v:
                 v.write(data)   
-# @app.route('/appenddata', methods=['POST'])
-
-# def manage_request3():
-#     player = request.form['player']
-#     print(player)
-#     data = request.form['data']
-#     preparedata(player, data)
-#     return "done"
 
 app.run(host='0.0.0.0') 
