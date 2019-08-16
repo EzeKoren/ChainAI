@@ -55,4 +55,4 @@ def appenddata(player, cord):
             with open(os.path.join(os.getcwd(), "data"), "w") as v:
                 v.write(str(data))   
 
-app.run(host='0.0.0.0') 
+app.run(host='0.0.0.0', port='4839') 
