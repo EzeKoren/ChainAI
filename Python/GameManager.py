@@ -11,7 +11,8 @@ class game:
         self.boardobj = json.loads(s["obj"])
         self.boardnum = s["num"]
         self.turn = 1        
-    
+        self.turncount = 0
+        
     def loadData (self, board):
         self.boardnum = board
         self.boardpath = os.path.join(os.getcwd(), "Tableros", str(board) + ".json")
@@ -21,10 +22,10 @@ class game:
         self.failed = False
         if str(self.turn) == str(player):
             s = json.loads(findsquare(cord, self.boardpath, player))["obj"]
-            print (s)
             if s == 'failed': 
                 self.failed = True
             else: 
+                self.turncount += 1
                 self.boardobj = s
                 if self.turn == 1: self.turn = 2
                 elif self.turn == 2: self.turn = 1
@@ -60,10 +61,10 @@ class game:
                 self.score -= 1            
             else:
                 self.actions.extend([square["cord"]])              
-                print("Pitu estuvo aqui")              
-        if foundp1 == True and foundp2 == False:
-            self.done = True
-            self.score = 10000
-        elif foundp2 == True and foundp1 == False:
-            self.done = True
-            self.score = -10000
+        if self.turncount > 1:
+            if foundp1 == True and foundp2 == False:
+                self.done = True
+                self.score = 10000
+            elif foundp2 == True and foundp1 == False:
+                self.done = True
+                self.score = -10000

@@ -51,6 +51,7 @@ function makefile() {
 }
 
 function placedot(cord, player, callback) {
+    M.Toast.dismissAll();
     var xhr = new XMLHttpRequest();
     var dir = url + "input";
     xhr.open("POST", dir, true);
@@ -62,6 +63,9 @@ function placedot(cord, player, callback) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             if (xhr.responseText == "failed") {
                 error = true;
+            } else if (xhr.responseText == "won") {
+                M.toast({ html: 'Gano el ' + player });
+                makefile();
             } else {
                 error = false;
                 oldobj = jsonobj;
@@ -72,9 +76,9 @@ function placedot(cord, player, callback) {
                 console.log(oldobj);
                 console.log(step);
                 console.log(jsonobj);
+                console.log(error);
+                changeplayer();
             };
-            console.log(error);
-            changeplayer();
         }
     };
 }
@@ -132,10 +136,6 @@ function displayboard() {
     // }
     changecolor(document.getElementById("titlebar"), player, false);
     working = false;
-    if (xhr.responseText == "won") {
-        M.toast({ html: 'Gano el ' + player });
-        makefile();
-    }
 }
 
 function changecolor(div, player, counting) {
