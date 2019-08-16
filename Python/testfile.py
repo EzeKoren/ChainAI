@@ -10,7 +10,6 @@ def main():
                         os.mkdir(os.path.join(os.getcwd(), "Tableros"))
                 tablero = os.path.join(os.getcwd(), "Tableros", str(num) + ".json")
                 if os.path.isfile(tablero) == False:
-                        print(tablero)
                         found = True
                         open(tablero, "w+")
                         populatefile(tablero)

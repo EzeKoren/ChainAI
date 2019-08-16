@@ -1,8 +1,8 @@
-// ------------------------------------------
+// ----------------------------- //
 
 var url = "http://localhost:5000/";
 
-// ------------------------------------------
+// ---------------------------- //
 
 $(window).on("load", function() {
     $(document).ready(function() {
@@ -12,9 +12,9 @@ $(window).on("load", function() {
         $("a.btn").click(async function() {
             if (working == false) {
                 working = true;
-                var id = $(this).attr('id');
-                console.log(id);
-                placedot(jsonfile, id, player);
+                var cord = $(this).attr('id');
+                console.log(cord);
+                placedot(cord, player);
             }
         });
     });
@@ -50,20 +50,23 @@ function makefile() {
     };
 }
 
-function placedot(file, cord, player, callback) {
+function placedot(cord, player, callback) {
     var xhr = new XMLHttpRequest();
     var dir = url + "input";
     xhr.open("POST", dir, true);
     var data = new FormData();
-    data.append("file", file);
     data.append("cord", cord);
     data.append("player", player);
     xhr.send(data);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            if (xhr.responseText == "failed") { error = true } else {
+            if (xhr.responseText == "failed") {
+                error = true;
+            } else {
                 error = false;
                 oldobj = jsonobj;
+                console.log(xhr.responseText);
+                // TODO: recibir si alguien gano, al mismo tiempo que recibe el tablero
                 jsonobj = JSON.parse(xhr.responseText);
                 step = String(cord);
                 console.log(oldobj);
@@ -83,9 +86,7 @@ function changeplayer() {
         console.log(player);
         if (player == 1) {
             player = 2;
-            turncount++;
         } else if (player == 2) { player = 1; }
-        console.log("turno " + turncount);
         M.Toast.dismissAll();
         displayboard();
     } else {
@@ -97,11 +98,9 @@ function changeplayer() {
 
 function displayboard() {
     var key = 0;
-    p1 = 0;
-    p2 = 0;
     while (key < Object.keys(jsonobj.boxes).length) {
         // console.log("display keyboard: " + Object(jsonobj.boxes[key].id));
-        var div = document.getElementById(Object(jsonobj.boxes[key].id));
+        var div = document.getElementById(Object(jsonobj.boxes[key].cord));
         var points = Number(Object(jsonobj.boxes[key].points));
         console.log(points);
         if (points == 1) {
@@ -119,20 +118,24 @@ function displayboard() {
         changecolor(div, Number(Object(jsonobj.boxes[key].player)), true)
         key++;
     }
-    if (turncount > 1) {
-        if (p1 == 0) {
-            M.toast({ html: 'Gano el 2' });
-            sendtoai(2);
-            makefile();
-        }
-        if (p2 == 0) {
-            M.toast({ html: 'Gano el 1' });
-            turncount = 0;
-            makefile();
-        }
-    }
+    // if (turncount > 1) {
+    //     if (p1 == 0) {
+    //         M.toast({ html: 'Gano el 2' });
+    //         sendtoai(2);
+    //         makefile();
+    //     }
+    //     if (p2 == 0) {
+    //         M.toast({ html: 'Gano el 1' });
+    //         turncount = 0;
+    //         makefile();
+    //     }
+    // }
     changecolor(document.getElementById("titlebar"), player, false);
     working = false;
+    if (xhr.responseText == "won") {
+        M.toast({ html: 'Gano el ' + player });
+        makefile();
+    }
 }
 
 function changecolor(div, player, counting) {

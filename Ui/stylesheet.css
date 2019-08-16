@@ -10,12 +10,10 @@ html {
 }
 
 .icon {
-    max-width: 200%;
+    width: fill;
     display: block;
-    margin-top: 50%;
-    margin-left: -50%;
-    padding-top: auto;
-    padding-bottom: auto;
+    margin: auto;
+    
 }
 
 .button {

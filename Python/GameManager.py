@@ -18,13 +18,18 @@ class game:
         self.boardobj = json.loads(open(self.boardpath, "r").read().replace('\n', ''))
         
     def makeMove (self, player, cord):
-        if str(self.turn) == player:
-            self.boardobj = json.loads(findsquare(cord, self.boardpath, player))["obj"]
-            if self.turn == 1: self.turn = 2
-            elif self.turn == 2: self.turn = 1
-            return (json.dumps(self.boardobj))
+        self.failed = False
+        if str(self.turn) == str(player):
+            s = json.loads(findsquare(cord, self.boardpath, player))["obj"]
+            print (s)
+            if s == 'failed': 
+                self.failed = True
+            else: 
+                self.boardobj = s
+                if self.turn == 1: self.turn = 2
+                elif self.turn == 2: self.turn = 1
         else: 
-            return ("failed")
+            self.failed = True
     
     def getCurrentInfo (self, player): 
         foundp1 = False

@@ -14,11 +14,14 @@ import os
   
 def findsquare(boxtocheck, jsonfile, player):
     ## DUMPS JSON OBJECTS TO A PYTHON EDITABLE DICTIONARY
+    toreturn = {}
     with open(jsonfile, "r") as jayson: 
         data = json.load(jayson) 
         ## LOOPS UNTILL IT FINDS THE DESIRED POSITION 
         for square in data["boxes"]:
             if square["cord"] == boxtocheck or square["id"] == boxtocheck:
+                print (player)
+                print (square["player"])
                 ## CHCECKS IF TAKEN
                 if square["player"] == player or square["player"] == 0:
                     ## MARKS POSITION AS TAKEN BY PLAYER
@@ -53,12 +56,12 @@ def findsquare(boxtocheck, jsonfile, player):
                     ## DUMPS THE MODIFIED DICTIONARY TO THE JSON FILE
                     with open (jsonfile, "w") as ndeah:
                         json.dump(data, ndeah, indent=4)
-                        toreturn = {}
                         toreturn["obj"] = data
                         toreturn["cord"] = square["cord"]
                         return str(json.dumps(toreturn))
                 else: 
-                    return "failed"
+                    toreturn["obj"] = "failed"
+                    return str(json.dumps(toreturn))
 
 def second(boxtocheck, data, player):
     for square in data["boxes"]:

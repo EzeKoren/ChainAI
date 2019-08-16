@@ -23,8 +23,13 @@ def manage_request1():
 def manage_request2():
     cord = request.form['cord']
     player = int(request.form['player'])
-    if current.makeMove(player, cord) == "failed":
+    current.makeMove(player, cord)
+    if current.failed == True:
         return "failed"
+    elif current.done == True:
+        fcode = current.boardobj
+        fcode.append(["won"])
+        return json.dumps(fcode)
     else:
         fcode = json.dumps(current.boardobj)
         appenddata(player, cord)
@@ -33,20 +38,20 @@ def manage_request2():
 def appenddata(player, cord):
     current.getCurrentInfo(player)
     if player == 1:
-        player1data.append([current.state, int(cord.replace('c', ''))])
+        player1data.append([current.state, cord])
         if current.done == True:
-            with open("trainingData", "r") as v:
+            with open(os.path.join(os.getcwd(), "data"), "r") as v:
                 data = v.read
             data.append([player1data])
-            with open("trainingData", "w") as v:
+            with open(os.path.join(os.getcwd(), "data"), "w") as v:
                 v.write(data)
     else:
-        player2data.append([current.state, int(cord.replace('c', ''))])
+        player2data.append([current.state, cord])
         if current.done == True:
-            with open("trainingData", "r") as v:
+            with open(os.path.join(os.getcwd(), "data"), "r") as v:
                 data = v.read
             data.append([player2data])
-            with open("trainingData", "w") as v:
+            with open(os.path.join(os.getcwd(), "data"), "w") as v:
                 v.write(data)   
 
 app.run(host='0.0.0.0') 
