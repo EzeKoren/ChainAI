@@ -13,6 +13,7 @@ import os
 # player = str(sys.argv[3])
   
 def findsquare(boxtocheck, jsonfile, player):
+    recursions = 0
     ## DUMPS JSON OBJECTS TO A PYTHON EDITABLE DICTIONARY
     toreturn = {}
     with open(jsonfile, "r") as jayson: 
@@ -39,6 +40,7 @@ def findsquare(boxtocheck, jsonfile, player):
                         with open(jsonfile, "w") as ndeah:
                             json.dump(data, ndeah, indent=4)
                         ## TRIGGERS EXPANSION
+                        recursions += 1
                         print ("expanding")
                         print (str(square["cordy"]) + ", " + str(square["cordy"] + 1) + ", " + str(square["cordy"] - 1))
                         print (str(square["cordx"]) + ", " + str(square["cordx"] + 1) + ", " + str(square["cordx"] - 1))
@@ -78,17 +80,21 @@ def second(boxtocheck, data, player):
                 square["points"] = 0
                 square["player"] = 0
                 ## TRIGGERS EXPANSION
-                print ("expanding")
-                print (str(square["cordy"]) + ", " + str(square["cordy"] + 1) + ", " + str(square["cordy"] - 1))
-                print (str(square["cordx"]) + ", " + str(square["cordx"] + 1) + ", " + str(square["cordx"] - 1))
-                if square["limy"] == 2:
-                    data = second(str(square["cordy"] + 1) + str(square["cordx"]), data, player)          
-                    data = second(str(square["cordy"] - 1) + str(square["cordx"]), data, player)
+                recursions +=1
+                if recursions < 1000:
+                    print ("expanding")
+                    print (str(square["cordy"]) + ", " + str(square["cordy"] + 1) + ", " + str(square["cordy"] - 1))
+                    print (str(square["cordx"]) + ", " + str(square["cordx"] + 1) + ", " + str(square["cordx"] - 1))
+                    if square["limy"] == 2:
+                        data = second(str(square["cordy"] + 1) + str(square["cordx"]), data, player)          
+                        data = second(str(square["cordy"] - 1) + str(square["cordx"]), data, player)
+                    else: 
+                        data = second(str(square["cordy"] + square["limy"]) + str(square["cordx"]), data, player)
+                    if square["limx"] == 2:
+                        data = second(str(square["cordy"]) + str(square["cordx"] + 1), data, player)
+                        data = second(str(square["cordy"]) + str(square["cordx"] - 1), data, player)
+                    else: 
+                        data = second(str(square["cordy"]) + str(square["cordx"] + square["limx"]), data, player)
                 else: 
-                    data = second(str(square["cordy"] + square["limy"]) + str(square["cordx"]), data, player)
-                if square["limx"] == 2:
-                    data = second(str(square["cordy"]) + str(square["cordx"] + 1), data, player)
-                    data = second(str(square["cordy"]) + str(square["cordx"] - 1), data, player)
-                else: 
-                    data = second(str(square["cordy"]) + str(square["cordx"] + square["limx"]), data, player)
+                    print("recursive stopped")
             return data
