@@ -11,9 +11,10 @@ import os
 # jsonfile = "../Tableros/" + str(sys.argv[4]) + ".json"
 # params = str(sys.argv[1]) + str(sys.argv[2])
 # player = str(sys.argv[3])
+
+recursions = 0
   
 def findsquare(boxtocheck, jsonfile, player):
-    recursions = 0
     ## DUMPS JSON OBJECTS TO A PYTHON EDITABLE DICTIONARY
     toreturn = {}
     with open(jsonfile, "r") as jayson: 
@@ -82,7 +83,7 @@ def second(boxtocheck, data, player):
                 ## TRIGGERS EXPANSION
                 recursions +=1
                 if recursions < 1000:
-                    print ("expanding")
+                    print ("expanding " + str(recursions))
                     print (str(square["cordy"]) + ", " + str(square["cordy"] + 1) + ", " + str(square["cordy"] - 1))
                     print (str(square["cordx"]) + ", " + str(square["cordx"] + 1) + ", " + str(square["cordx"] - 1))
                     if square["limy"] == 2:
