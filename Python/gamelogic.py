@@ -81,7 +81,7 @@ def second(boxtocheck, data, player):
                 square["player"] = 0
                 ## TRIGGERS EXPANSION
                 recursions +=1
-                if recursions < 200:
+                if recursions < 1000:
                     print ("expanding")
                     print (str(square["cordy"]) + ", " + str(square["cordy"] + 1) + ", " + str(square["cordy"] - 1))
                     print (str(square["cordx"]) + ", " + str(square["cordx"] + 1) + ", " + str(square["cordx"] - 1))
